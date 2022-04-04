@@ -1,0 +1,6 @@
+framework module Pods_iNaviNear {
+  umbrella header "Pods-iNaviNear-umbrella.h"
+
+  export *
+  module * { export * }
+}

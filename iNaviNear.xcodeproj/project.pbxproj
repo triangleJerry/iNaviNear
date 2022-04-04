@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6380A2198F256ED45E10F568 /* Pods_iNaviNear.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C6F557E24ABEAE05B0BB4268 /* Pods_iNaviNear.framework */; };
 		A157003D27FA93BD00DE498F /* iNaviNearApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A157003C27FA93BD00DE498F /* iNaviNearApp.swift */; };
 		A157003F27FA93BD00DE498F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A157003E27FA93BD00DE498F /* ContentView.swift */; };
 		A157004127FA93BF00DE498F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A157004027FA93BF00DE498F /* Assets.xcassets */; };
@@ -14,11 +15,14 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		656074E3D65CADF7BB25020D /* Pods-iNaviNear.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iNaviNear.debug.xcconfig"; path = "Target Support Files/Pods-iNaviNear/Pods-iNaviNear.debug.xcconfig"; sourceTree = "<group>"; };
 		A157003927FA93BD00DE498F /* iNaviNear.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iNaviNear.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A157003C27FA93BD00DE498F /* iNaviNearApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iNaviNearApp.swift; sourceTree = "<group>"; };
 		A157003E27FA93BD00DE498F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		A157004027FA93BF00DE498F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A157004327FA93BF00DE498F /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		B79B62F845690F0A011777C7 /* Pods-iNaviNear.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iNaviNear.release.xcconfig"; path = "Target Support Files/Pods-iNaviNear/Pods-iNaviNear.release.xcconfig"; sourceTree = "<group>"; };
+		C6F557E24ABEAE05B0BB4268 /* Pods_iNaviNear.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iNaviNear.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -26,17 +30,30 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6380A2198F256ED45E10F568 /* Pods_iNaviNear.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1273A39A3C9C37DB2C6F581C /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				656074E3D65CADF7BB25020D /* Pods-iNaviNear.debug.xcconfig */,
+				B79B62F845690F0A011777C7 /* Pods-iNaviNear.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		A157003027FA93BC00DE498F = {
 			isa = PBXGroup;
 			children = (
 				A157003B27FA93BD00DE498F /* iNaviNear */,
 				A157003A27FA93BD00DE498F /* Products */,
+				1273A39A3C9C37DB2C6F581C /* Pods */,
+				D3FE9702CA924EA510B9F817 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -67,6 +84,14 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		D3FE9702CA924EA510B9F817 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C6F557E24ABEAE05B0BB4268 /* Pods_iNaviNear.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -74,9 +99,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A157004727FA93BF00DE498F /* Build configuration list for PBXNativeTarget "iNaviNear" */;
 			buildPhases = (
+				1ED38E87843237E5BBAAEAEC /* [CP] Check Pods Manifest.lock */,
 				A157003527FA93BC00DE498F /* Sources */,
 				A157003627FA93BC00DE498F /* Frameworks */,
 				A157003727FA93BC00DE498F /* Resources */,
+				20E7A71E4E9E9B985D2EE1BA /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -131,6 +158,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1ED38E87843237E5BBAAEAEC /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-iNaviNear-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		20E7A71E4E9E9B985D2EE1BA /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-iNaviNear/Pods-iNaviNear-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-iNaviNear/Pods-iNaviNear-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-iNaviNear/Pods-iNaviNear-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		A157003527FA93BC00DE498F /* Sources */ = {
@@ -261,6 +330,7 @@
 		};
 		A157004827FA93BF00DE498F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 656074E3D65CADF7BB25020D /* Pods-iNaviNear.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -291,6 +361,7 @@
 		};
 		A157004927FA93BF00DE498F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B79B62F845690F0A011777C7 /* Pods-iNaviNear.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;

@@ -1,0 +1,16 @@
+PODS:
+  - inavi-maps-sdk (0.7.0)
+
+DEPENDENCIES:
+  - inavi-maps-sdk
+
+SPEC REPOS:
+  trunk:
+    - inavi-maps-sdk
+
+SPEC CHECKSUMS:
+  inavi-maps-sdk: ba25ef2b6d08bb104329416a57c609965dedb85e
+
+PODFILE CHECKSUM: 9d3f415596aac5c4d25ad6764cead6ed21bf3246
+
+COCOAPODS: 1.11.2
