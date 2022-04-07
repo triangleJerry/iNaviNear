@@ -19,6 +19,7 @@
 		0315076D27FEABF100C79C57 /* GPXParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0315076C27FEABF100C79C57 /* GPXParser.swift */; };
 		0315076F27FEABFA00C79C57 /* ShapeUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0315076E27FEABFA00C79C57 /* ShapeUtils.swift */; };
 		0315077127FEAC0400C79C57 /* DataBaseUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0315077027FEAC0400C79C57 /* DataBaseUtils.swift */; };
+		038012C027FEC31900DFB28D /* PreViewDev.swift in Sources */ = {isa = PBXBuildFile; fileRef = 038012BF27FEC31900DFB28D /* PreViewDev.swift */; };
 		6380A2198F256ED45E10F568 /* Pods_iNaviNear.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C6F557E24ABEAE05B0BB4268 /* Pods_iNaviNear.framework */; };
 		A157003D27FA93BD00DE498F /* iNaviNearApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A157003C27FA93BD00DE498F /* iNaviNearApp.swift */; };
 		A157003F27FA93BD00DE498F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A157003E27FA93BD00DE498F /* ContentView.swift */; };
@@ -39,6 +40,7 @@
 		0315076C27FEABF100C79C57 /* GPXParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GPXParser.swift; sourceTree = "<group>"; };
 		0315076E27FEABFA00C79C57 /* ShapeUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShapeUtils.swift; sourceTree = "<group>"; };
 		0315077027FEAC0400C79C57 /* DataBaseUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataBaseUtils.swift; sourceTree = "<group>"; };
+		038012BF27FEC31900DFB28D /* PreViewDev.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreViewDev.swift; sourceTree = "<group>"; };
 		656074E3D65CADF7BB25020D /* Pods-iNaviNear.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iNaviNear.debug.xcconfig"; path = "Target Support Files/Pods-iNaviNear/Pods-iNaviNear.debug.xcconfig"; sourceTree = "<group>"; };
 		A157003927FA93BD00DE498F /* iNaviNear.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iNaviNear.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A157003C27FA93BD00DE498F /* iNaviNearApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iNaviNearApp.swift; sourceTree = "<group>"; };
@@ -69,6 +71,7 @@
 				0315076C27FEABF100C79C57 /* GPXParser.swift */,
 				0315076E27FEABFA00C79C57 /* ShapeUtils.swift */,
 				0315077027FEAC0400C79C57 /* DataBaseUtils.swift */,
+				038012BF27FEC31900DFB28D /* PreViewDev.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -298,6 +301,7 @@
 				0315076127FEAB8A00C79C57 /* NNSettingView.swift in Sources */,
 				0315076F27FEABFA00C79C57 /* ShapeUtils.swift in Sources */,
 				0315076B27FEABE700C79C57 /* Extensions.swift in Sources */,
+				038012C027FEC31900DFB28D /* PreViewDev.swift in Sources */,
 				A157003D27FA93BD00DE498F /* iNaviNearApp.swift in Sources */,
 				0315076527FEABBF00C79C57 /* CafeData.swift in Sources */,
 				0315075D27FEAB6D00C79C57 /* NNMapView.swift in Sources */,
