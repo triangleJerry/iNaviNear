@@ -15,6 +15,6 @@ struct NNMapView: View {
 
 struct NNMapView_Previews: PreviewProvider {
     static var previews: some View {
-        NNMapView()
+        PreViewDev(source: NNMapView())
     }
 }
