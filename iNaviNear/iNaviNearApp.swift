@@ -7,8 +7,6 @@
 
 import SwiftUI
 
-// 브랜치 테스트
-
 @main
 struct iNaviNearApp: App {
     var body: some Scene {
