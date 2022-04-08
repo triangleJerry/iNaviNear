@@ -10,6 +10,8 @@ import iNaviMaps
 
 struct NNMapView: UIViewRepresentable {
     
+    let gpxParser = GPXParser()
+    
     func updateUIView(_ uiView: InaviMapView, context: Context) {
         
     }
@@ -18,6 +20,12 @@ struct NNMapView: UIViewRepresentable {
         let view = InaviMapView()
         
         return view
+    }
+    
+    init() {
+        //let filepath = Bundle.main.path(forResource: "CafeLocation", ofType: "gpx")!
+        let filepath = Bundle.main.path(forResource: "BaegUnLake", ofType: "gpx")!
+        let cafeDic = gpxParser.parsingGpxFile(filepath: URL(fileURLWithPath: filepath), filename: .CafeLocation)
     }
 }
 
