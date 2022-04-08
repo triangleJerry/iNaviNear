@@ -1,0 +1,759 @@
+<?xml version="1.0"?>
+<gpx version="1.1" creator="Xcode">
+    
+    <!--
+     Provide one or more waypoints containing a latitude/longitude pair. If you provide one
+     waypoint, Xcode will simulate that specific location. If you provide multiple waypoints,
+     Xcode will simulate a route visiting each waypoint.
+     -->
+    
+    <wpt lat="37.3842735" lon="126.9974000">
+        <name>line1.Cafe1</name>
+        <time>2014-09-24T14:55:37Z</time>
+    </wpt>
+    
+    <wpt lat="37.3842735" lon="126.9984000">
+        <name>line1.Cafe2</name>
+        <time>2014-09-24T14:55:37Z</time>
+    </wpt>
+    
+    <wpt lat="37.3842735" lon="126.9994000">
+        <name>line1.Cafe3</name>
+        <time>2014-09-24T14:55:37Z</time>
+    </wpt>
+    
+    <wpt lat="37.3842735" lon="127.0004000">
+        <name>line1.Cafe4</name>
+        <time>2014-09-24T14:55:37Z</time>
+    </wpt>
+    
+    <wpt lat="37.3842735" lon="127.0014000">
+        <name>line1.Cafe5</name>
+        <time>2014-09-24T14:55:37Z</time>
+    </wpt>
+    
+    <wpt lat="37.3842735" lon="127.0024000">
+        <name>line1.Cafe6</name>
+        <time>2014-09-24T14:55:37Z</time>
+    </wpt>
+    
+    <wpt lat="37.3842735" lon="127.0034000">
+        <name>line1.Cafe7</name>
+        <time>2014-09-24T14:55:37Z</time>
+    </wpt>
+    
+    <wpt lat="37.3842735" lon="127.0044000">
+        <name>line1.Cafe8</name>
+        <time>2014-09-24T14:55:37Z</time>
+    </wpt>
+    
+    <wpt lat="37.3842735" lon="127.0054000">
+        <name>line1.Cafe9</name>
+        <time>2014-09-24T14:55:37Z</time>
+    </wpt>
+    
+    <wpt lat="37.3842735" lon="127.0064000">
+        <name>line1.Cafe10</name>
+        <time>2014-09-24T14:55:37Z</time>
+    </wpt>
+    
+    <wpt lat="37.3842735" lon="127.0074000">
+        <name>line1.Cafe11</name>
+        <time>2014-09-24T14:55:37Z</time>
+    </wpt>
+    
+    <wpt lat="37.3842735" lon="127.0084000">
+        <name>line1.Cafe12</name>
+        <time>2014-09-24T14:55:37Z</time>
+    </wpt>
+    
+    <wpt lat="37.3842735" lon="127.0094000">
+        <name>line1.Cafe13</name>
+        <time>2014-09-24T14:55:37Z</time>
+    </wpt>
+    
+    <wpt lat="37.3842735" lon="127.0104000">
+        <name>line1.Cafe14</name>
+        <time>2014-09-24T14:55:37Z</time>
+    </wpt>
+    
+    <wpt lat="37.3842735" lon="127.0114000">
+        <name>line1.Cafe15</name>
+        <time>2014-09-24T14:55:37Z</time>
+    </wpt>
+    
+    <!--
+    line1.
+    -->
+    
+    <wpt lat="37.3832735" lon="126.9974000">
+        <name>line2.Cafe1</name>
+        <time>2014-09-24T14:55:37Z</time>
+    </wpt>
+    
+    <wpt lat="37.3832735" lon="126.9984000">
+        <name>line2.Cafe2</name>
+        <time>2014-09-24T14:55:37Z</time>
+    </wpt>
+    
+    <wpt lat="37.3832735" lon="126.9994000">
+        <name>line2.Cafe3</name>
+        <time>2014-09-24T14:55:37Z</time>
+    </wpt>
+    
+    <wpt lat="37.3832735" lon="127.0004000">
+        <name>line2.Cafe4</name>
+        <time>2014-09-24T14:55:37Z</time>
+    </wpt>
+    
+    <wpt lat="37.3832735" lon="127.0014000">
+        <name>line2.Cafe5</name>
+        <time>2014-09-24T14:55:37Z</time>
+    </wpt>
+    
+    <wpt lat="37.3832735" lon="127.0024000">
+        <name>line2.Cafe6</name>
+        <time>2014-09-24T14:55:37Z</time>
+    </wpt>
+    
+    <wpt lat="37.3832735" lon="127.0034000">
+        <name>line2.Cafe7</name>
+        <time>2014-09-24T14:55:37Z</time>
+    </wpt>
+    
+    <wpt lat="37.3832735" lon="127.0044000">
+        <name>line2.Cafe8</name>
+        <time>2014-09-24T14:55:37Z</time>
+    </wpt>
+    
+    <wpt lat="37.3832735" lon="127.0054000">
+        <name>line2.Cafe9</name>
+        <time>2014-09-24T14:55:37Z</time>
+    </wpt>
+    
+    <wpt lat="37.3832735" lon="127.0064000">
+        <name>line2.Cafe10</name>
+        <time>2014-09-24T14:55:37Z</time>
+    </wpt>
+    
+    <wpt lat="37.3832735" lon="127.0074000">
+        <name>line2.Cafe11</name>
+        <time>2014-09-24T14:55:37Z</time>
+    </wpt>
+    
+    <wpt lat="37.3832735" lon="127.0084000">
+        <name>line2.Cafe12</name>
+        <time>2014-09-24T14:55:37Z</time>
+    </wpt>
+    
+    <wpt lat="37.3832735" lon="127.0094000">
+        <name>line2.Cafe13</name>
+        <time>2014-09-24T14:55:37Z</time>
+    </wpt>
+    
+    <wpt lat="37.3832735" lon="127.0104000">
+        <name>line2.Cafe14</name>
+        <time>2014-09-24T14:55:37Z</time>
+    </wpt>
+    
+    <wpt lat="37.3832735" lon="127.0114000">
+        <name>line2.Cafe15</name>
+        <time>2014-09-24T14:55:37Z</time>
+    </wpt>
+    
+    <!--
+    line2.
+    -->
+    
+    <wpt lat="37.3822735" lon="126.9974000">
+        <name>line3.Cafe1</name>
+        <time>2014-09-24T14:55:37Z</time>
+    </wpt>
+    
+    <wpt lat="37.3822735" lon="126.9984000">
+        <name>line3.Cafe2</name>
+        <time>2014-09-24T14:55:37Z</time>
+    </wpt>
+    
+    <wpt lat="37.3822735" lon="126.9994000">
+        <name>line3.Cafe3</name>
+        <time>2014-09-24T14:55:37Z</time>
+    </wpt>
+    
+    <wpt lat="37.3822735" lon="127.0004000">
+        <name>line3.Cafe4</name>
+        <time>2014-09-24T14:55:37Z</time>
+    </wpt>
+    
+    <wpt lat="37.3822735" lon="127.0014000">
+        <name>line3.Cafe5</name>
+        <time>2014-09-24T14:55:37Z</time>
+    </wpt>
+    
+    <wpt lat="37.3822735" lon="127.0084000">
+        <name>line3.Cafe12</name>
+        <time>2014-09-24T14:55:37Z</time>
+    </wpt>
+    
+    <wpt lat="37.3822735" lon="127.0094000">
+        <name>line3.Cafe13</name>
+        <time>2014-09-24T14:55:37Z</time>
+    </wpt>
+    
+    <wpt lat="37.3822735" lon="127.0104000">
+        <name>line3.Cafe14</name>
+        <time>2014-09-24T14:55:37Z</time>
+    </wpt>
+    
+    <wpt lat="37.3822735" lon="127.0114000">
+        <name>line3.Cafe15</name>
+        <time>2014-09-24T14:55:37Z</time>
+    </wpt>
+    
+    <!--
+    line3.
+    -->
+    
+    <wpt lat="37.3812735" lon="126.9974000">
+        <name>line4.Cafe1</name>
+        <time>2014-09-24T14:55:37Z</time>
+    </wpt>
+    
+    <wpt lat="37.3812735" lon="126.9984000">
+        <name>line4.Cafe2</name>
+        <time>2014-09-24T14:55:37Z</time>
+    </wpt>
+    
+    <wpt lat="37.3812735" lon="126.9994000">
+        <name>line4.Cafe3</name>
+        <time>2014-09-24T14:55:37Z</time>
+    </wpt>
+    
+    <wpt lat="37.3812735" lon="127.0004000">
+        <name>line4.Cafe4</name>
+        <time>2014-09-24T14:55:37Z</time>
+    </wpt>
+    
+    <wpt lat="37.3812735" lon="127.0014000">
+        <name>line4.Cafe5</name>
+        <time>2014-09-24T14:55:37Z</time>
+    </wpt>
+    
+    <wpt lat="37.3812735" lon="127.0054000">
+        <name>line4.Cafe9</name>
+        <time>2014-09-24T14:55:37Z</time>
+    </wpt>
+    
+    <wpt lat="37.3812735" lon="127.0064000">
+        <name>line4.Cafe10</name>
+        <time>2014-09-24T14:55:37Z</time>
+    </wpt>
+    
+    <wpt lat="37.3812735" lon="127.0074000">
+        <name>line4.Cafe11</name>
+        <time>2014-09-24T14:55:37Z</time>
+    </wpt>
+    
+    <wpt lat="37.3812735" lon="127.0084000">
+        <name>line4.Cafe12</name>
+        <time>2014-09-24T14:55:37Z</time>
+    </wpt>
+    
+    <wpt lat="37.3812735" lon="127.0094000">
+        <name>line4.Cafe13</name>
+        <time>2014-09-24T14:55:37Z</time>
+    </wpt>
+    
+    <wpt lat="37.3812735" lon="127.0104000">
+        <name>line4.Cafe14</name>
+        <time>2014-09-24T14:55:37Z</time>
+    </wpt>
+    
+    <wpt lat="37.3812735" lon="127.0114000">
+        <name>line4.Cafe15</name>
+        <time>2014-09-24T14:55:37Z</time>
+    </wpt>
+    
+    <!--
+    line4.
+    -->
+    
+    <wpt lat="37.3802735" lon="126.9974000">
+        <name>line5.Cafe1</name>
+        <time>2014-09-24T14:55:37Z</time>
+    </wpt>
+    
+    <wpt lat="37.3802735" lon="126.9984000">
+        <name>line5.Cafe2</name>
+        <time>2014-09-24T14:55:37Z</time>
+    </wpt>
+    
+    <wpt lat="37.3802735" lon="126.9994000">
+        <name>line5.Cafe3</name>
+        <time>2014-09-24T14:55:37Z</time>
+    </wpt>
+    
+    <wpt lat="37.3802735" lon="127.0004000">
+        <name>line5.Cafe4</name>
+        <time>2014-09-24T14:55:37Z</time>
+    </wpt>
+    
+    <wpt lat="37.3802735" lon="127.0044000">
+        <name>line5.Cafe8</name>
+        <time>2014-09-24T14:55:37Z</time>
+    </wpt>
+    
+    <wpt lat="37.3802735" lon="127.0054000">
+        <name>line5.Cafe9</name>
+        <time>2014-09-24T14:55:37Z</time>
+    </wpt>
+    
+    <wpt lat="37.3802735" lon="127.0064000">
+        <name>line5.Cafe10</name>
+        <time>2014-09-24T14:55:37Z</time>
+    </wpt>
+    
+    <wpt lat="37.3802735" lon="127.0074000">
+        <name>line5.Cafe11</name>
+        <time>2014-09-24T14:55:37Z</time>
+    </wpt>
+    
+    <wpt lat="37.3802735" lon="127.0084000">
+        <name>line5.Cafe12</name>
+        <time>2014-09-24T14:55:37Z</time>
+    </wpt>
+    
+    <wpt lat="37.3802735" lon="127.0094000">
+        <name>line5.Cafe13</name>
+        <time>2014-09-24T14:55:37Z</time>
+    </wpt>
+    
+    <wpt lat="37.3802735" lon="127.0104000">
+        <name>line5.Cafe14</name>
+        <time>2014-09-24T14:55:37Z</time>
+    </wpt>
+    
+    <wpt lat="37.3802735" lon="127.0114000">
+        <name>line5.Cafe15</name>
+        <time>2014-09-24T14:55:37Z</time>
+    </wpt>
+    
+    <!--
+    line5.
+    -->
+    
+    <wpt lat="37.3792735" lon="126.9974000">
+        <name>line6.Cafe1</name>
+        <time>2014-09-24T14:55:37Z</time>
+    </wpt>
+    
+    <wpt lat="37.3792735" lon="126.9984000">
+        <name>line6.Cafe2</name>
+        <time>2014-09-24T14:55:37Z</time>
+    </wpt>
+    
+    <wpt lat="37.3792735" lon="126.9994000">
+        <name>line6.Cafe3</name>
+        <time>2014-09-24T14:55:37Z</time>
+    </wpt>
+    
+    <wpt lat="37.3792735" lon="127.0054000">
+        <name>line6.Cafe9</name>
+        <time>2014-09-24T14:55:37Z</time>
+    </wpt>
+    
+    <wpt lat="37.3792735" lon="127.0064000">
+        <name>line6.Cafe10</name>
+        <time>2014-09-24T14:55:37Z</time>
+    </wpt>
+    
+    <wpt lat="37.3792735" lon="127.0074000">
+        <name>line6.Cafe11</name>
+        <time>2014-09-24T14:55:37Z</time>
+    </wpt>
+    
+    <wpt lat="37.3792735" lon="127.0084000">
+        <name>line6.Cafe12</name>
+        <time>2014-09-24T14:55:37Z</time>
+    </wpt>
+    
+    <wpt lat="37.3792735" lon="127.0094000">
+        <name>line6.Cafe13</name>
+        <time>2014-09-24T14:55:37Z</time>
+    </wpt>
+    
+    <wpt lat="37.3792735" lon="127.0104000">
+        <name>line6.Cafe14</name>
+        <time>2014-09-24T14:55:37Z</time>
+    </wpt>
+    
+    <wpt lat="37.3792735" lon="127.0114000">
+        <name>line6.Cafe15</name>
+        <time>2014-09-24T14:55:37Z</time>
+    </wpt>
+    
+    <!--
+    line6.
+    -->
+    
+    <wpt lat="37.3782735" lon="126.9974000">
+        <name>line7.Cafe1</name>
+        <time>2014-09-24T14:55:37Z</time>
+    </wpt>
+    
+    <wpt lat="37.3782735" lon="126.9984000">
+        <name>line7.Cafe2</name>
+        <time>2014-09-24T14:55:37Z</time>
+    </wpt>
+    
+    <wpt lat="37.3782735" lon="126.9994000">
+        <name>line7.Cafe3</name>
+        <time>2014-09-24T14:55:37Z</time>
+    </wpt>
+    
+    <wpt lat="37.3782735" lon="127.0014000">
+        <name>line7.Cafe5</name>
+        <time>2014-09-24T14:55:37Z</time>
+    </wpt>
+    
+    <wpt lat="37.3782735" lon="127.0054000">
+        <name>line7.Cafe10</name>
+        <time>2014-09-24T14:55:37Z</time>
+    </wpt>
+    
+    <wpt lat="37.3782735" lon="127.0064000">
+        <name>line7.Cafe10</name>
+        <time>2014-09-24T14:55:37Z</time>
+    </wpt>
+    
+    <wpt lat="37.3782735" lon="127.0074000">
+        <name>line7.Cafe11</name>
+        <time>2014-09-24T14:55:37Z</time>
+    </wpt>
+    
+    <wpt lat="37.3782735" lon="127.0084000">
+        <name>line7.Cafe12</name>
+        <time>2014-09-24T14:55:37Z</time>
+    </wpt>
+    
+    <wpt lat="37.3782735" lon="127.0094000">
+        <name>line7.Cafe13</name>
+        <time>2014-09-24T14:55:37Z</time>
+    </wpt>
+    
+    <wpt lat="37.3782735" lon="127.0104000">
+        <name>line7.Cafe14</name>
+        <time>2014-09-24T14:55:37Z</time>
+    </wpt>
+    
+    <wpt lat="37.3782735" lon="127.0114000">
+        <name>line7.Cafe15</name>
+        <time>2014-09-24T14:55:37Z</time>
+    </wpt>
+    
+    <!--
+    line7.
+    -->
+    
+    <wpt lat="37.3772735" lon="126.9974000">
+        <name>line8.Cafe1</name>
+        <time>2014-09-24T14:55:37Z</time>
+    </wpt>
+    
+    <wpt lat="37.3772735" lon="126.9984000">
+        <name>line8.Cafe2</name>
+        <time>2014-09-24T14:55:37Z</time>
+    </wpt>
+    
+    <wpt lat="37.3772735" lon="126.9994000">
+        <name>line8.Cafe3</name>
+        <time>2014-09-24T14:55:37Z</time>
+    </wpt>
+    
+    <wpt lat="37.3772735" lon="127.0004000">
+        <name>line8.Cafe4</name>
+        <time>2014-09-24T14:55:37Z</time>
+    </wpt>
+    
+    <wpt lat="37.3772735" lon="127.0014000">
+        <name>line8.Cafe5</name>
+        <time>2014-09-24T14:55:37Z</time>
+    </wpt>
+    
+    <wpt lat="37.3772735" lon="127.0024000">
+        <name>line8.Cafe6</name>
+        <time>2014-09-24T14:55:37Z</time>
+    </wpt>
+    
+    <wpt lat="37.3772735" lon="127.0054000">
+        <name>line8.Cafe9</name>
+        <time>2014-09-24T14:55:37Z</time>
+    </wpt>
+    
+    <wpt lat="37.3772735" lon="127.0064000">
+        <name>line8.Cafe10</name>
+        <time>2014-09-24T14:55:37Z</time>
+    </wpt>
+    
+    <wpt lat="37.3772735" lon="127.0074000">
+        <name>line8.Cafe11</name>
+        <time>2014-09-24T14:55:37Z</time>
+    </wpt>
+    
+    <wpt lat="37.3772735" lon="127.0084000">
+        <name>line8.Cafe12</name>
+        <time>2014-09-24T14:55:37Z</time>
+    </wpt>
+    
+    <wpt lat="37.3772735" lon="127.0094000">
+        <name>line8.Cafe13</name>
+        <time>2014-09-24T14:55:37Z</time>
+    </wpt>
+    
+    <wpt lat="37.3772735" lon="127.0104000">
+        <name>line8.Cafe14</name>
+        <time>2014-09-24T14:55:37Z</time>
+    </wpt>
+    
+    <wpt lat="37.3772735" lon="127.0114000">
+        <name>line8.Cafe15</name>
+        <time>2014-09-24T14:55:37Z</time>
+    </wpt>
+    
+    <!--
+    line8.
+    -->
+    
+    <wpt lat="37.3762735" lon="126.9974000">
+        <name>line9.Cafe1</name>
+        <time>2014-09-24T14:55:37Z</time>
+    </wpt>
+    
+    <wpt lat="37.3762735" lon="126.9984000">
+        <name>line9.Cafe2</name>
+        <time>2014-09-24T14:55:37Z</time>
+    </wpt>
+    
+    <wpt lat="37.3762735" lon="126.9994000">
+        <name>line9.Cafe3</name>
+        <time>2014-09-24T14:55:37Z</time>
+    </wpt>
+    
+    <wpt lat="37.3762735" lon="127.0004000">
+        <name>line9.Cafe4</name>
+        <time>2014-09-24T14:55:37Z</time>
+    </wpt>
+    
+    <wpt lat="37.3762735" lon="127.0014000">
+        <name>line9.Cafe5</name>
+        <time>2014-09-24T14:55:37Z</time>
+    </wpt>
+    
+    <wpt lat="37.3762735" lon="127.0024000">
+        <name>line9.Cafe6</name>
+        <time>2014-09-24T14:55:37Z</time>
+    </wpt>
+    
+    <wpt lat="37.3762735" lon="127.0034000">
+        <name>line9.Cafe7</name>
+        <time>2014-09-24T14:55:37Z</time>
+    </wpt>
+    
+    <wpt lat="37.3762735" lon="127.0054000">
+        <name>line9.Cafe9</name>
+        <time>2014-09-24T14:55:37Z</time>
+    </wpt>
+    
+    <wpt lat="37.3762735" lon="127.0064000">
+        <name>line9.Cafe10</name>
+        <time>2014-09-24T14:55:37Z</time>
+    </wpt>
+    
+    <wpt lat="37.3762735" lon="127.0074000">
+        <name>line9.Cafe11</name>
+        <time>2014-09-24T14:55:37Z</time>
+    </wpt>
+    
+    <wpt lat="37.3762735" lon="127.0084000">
+        <name>line9.Cafe12</name>
+        <time>2014-09-24T14:55:37Z</time>
+    </wpt>
+    
+    <wpt lat="37.3762735" lon="127.0094000">
+        <name>line9.Cafe13</name>
+        <time>2014-09-24T14:55:37Z</time>
+    </wpt>
+    
+    <wpt lat="37.3762735" lon="127.0104000">
+        <name>line9.Cafe14</name>
+        <time>2014-09-24T14:55:37Z</time>
+    </wpt>
+    
+    <wpt lat="37.3762735" lon="127.0114000">
+        <name>line9.Cafe15</name>
+        <time>2014-09-24T14:55:37Z</time>
+    </wpt>
+    
+    <!--
+    line9.
+    -->
+    
+    <wpt lat="37.3752735" lon="126.9974000">
+        <name>line10.Cafe1</name>
+        <time>2014-09-24T14:55:37Z</time>
+    </wpt>
+    
+    <wpt lat="37.3752735" lon="126.9984000">
+        <name>line10.Cafe2</name>
+        <time>2014-09-24T14:55:37Z</time>
+    </wpt>
+    
+    <wpt lat="37.3752735" lon="126.9994000">
+        <name>line10.Cafe3</name>
+        <time>2014-09-24T14:55:37Z</time>
+    </wpt>
+    
+    <wpt lat="37.3752735" lon="127.0004000">
+        <name>line10.Cafe4</name>
+        <time>2014-09-24T14:55:37Z</time>
+    </wpt>
+    
+    <wpt lat="37.3752735" lon="127.0014000">
+        <name>line10.Cafe5</name>
+        <time>2014-09-24T14:55:37Z</time>
+    </wpt>
+    
+    <wpt lat="37.3752735" lon="127.0024000">
+        <name>line10.Cafe6</name>
+        <time>2014-09-24T14:55:37Z</time>
+    </wpt>
+    
+    <wpt lat="37.3752735" lon="127.0034000">
+        <name>line10.Cafe7</name>
+        <time>2014-09-24T14:55:37Z</time>
+    </wpt>
+    
+    <wpt lat="37.3752735" lon="127.0044000">
+        <name>line10.Cafe8</name>
+        <time>2014-09-24T14:55:37Z</time>
+    </wpt>
+    
+    <wpt lat="37.3752735" lon="127.0054000">
+        <name>line10.Cafe9</name>
+        <time>2014-09-24T14:55:37Z</time>
+    </wpt>
+    
+    <wpt lat="37.3752735" lon="127.0064000">
+        <name>line10.Cafe10</name>
+        <time>2014-09-24T14:55:37Z</time>
+    </wpt>
+    
+    <wpt lat="37.3752735" lon="127.0074000">
+        <name>line10.Cafe11</name>
+        <time>2014-09-24T14:55:37Z</time>
+    </wpt>
+    
+    <wpt lat="37.3752735" lon="127.0084000">
+        <name>line10.Cafe12</name>
+        <time>2014-09-24T14:55:37Z</time>
+    </wpt>
+    
+    <wpt lat="37.3752735" lon="127.0094000">
+        <name>line10.Cafe13</name>
+        <time>2014-09-24T14:55:37Z</time>
+    </wpt>
+    
+    <wpt lat="37.3752735" lon="127.0104000">
+        <name>line10.Cafe14</name>
+        <time>2014-09-24T14:55:37Z</time>
+    </wpt>
+    
+    <wpt lat="37.3752735" lon="127.0114000">
+        <name>line10.Cafe15</name>
+        <time>2014-09-24T14:55:37Z</time>
+    </wpt>
+    
+    <!--
+    line10.
+    -->
+    
+    <wpt lat="37.3742735" lon="126.9974000">
+        <name>line11.Cafe1</name>
+        <time>2014-09-24T14:55:37Z</time>
+    </wpt>
+    
+    <wpt lat="37.3742735" lon="126.9984000">
+        <name>line11.Cafe2</name>
+        <time>2014-09-24T14:55:37Z</time>
+    </wpt>
+    
+    <wpt lat="37.3742735" lon="126.9994000">
+        <name>line11.Cafe3</name>
+        <time>2014-09-24T14:55:37Z</time>
+    </wpt>
+    
+    <wpt lat="37.3742735" lon="127.0004000">
+        <name>line11.Cafe4</name>
+        <time>2014-09-24T14:55:37Z</time>
+    </wpt>
+    
+    <wpt lat="37.3742735" lon="127.0014000">
+        <name>line11.Cafe5</name>
+        <time>2014-09-24T14:55:37Z</time>
+    </wpt>
+    
+    <wpt lat="37.3742735" lon="127.0024000">
+        <name>line11.Cafe6</name>
+        <time>2014-09-24T14:55:37Z</time>
+    </wpt>
+    
+    <wpt lat="37.3742735" lon="127.0034000">
+        <name>line11.Cafe7</name>
+        <time>2014-09-24T14:55:37Z</time>
+    </wpt>
+    
+    <wpt lat="37.3742735" lon="127.0044000">
+        <name>line11.Cafe8</name>
+        <time>2014-09-24T14:55:37Z</time>
+    </wpt>
+    
+    <wpt lat="37.3742735" lon="127.0054000">
+        <name>line11.Cafe9</name>
+        <time>2014-09-24T14:55:37Z</time>
+    </wpt>
+    
+    <wpt lat="37.3742735" lon="127.0064000">
+        <name>line11.Cafe10</name>
+        <time>2014-09-24T14:55:37Z</time>
+    </wpt>
+    
+    <wpt lat="37.3742735" lon="127.0074000">
+        <name>line11.Cafe11</name>
+        <time>2014-09-24T14:55:37Z</time>
+    </wpt>
+    
+    <wpt lat="37.3742735" lon="127.0084000">
+        <name>line11.Cafe12</name>
+        <time>2014-09-24T14:55:37Z</time>
+    </wpt>
+    
+    <wpt lat="37.3742735" lon="127.0094000">
+        <name>line11.Cafe13</name>
+        <time>2014-09-24T14:55:37Z</time>
+    </wpt>
+    
+    <wpt lat="37.3742735" lon="127.0104000">
+        <name>line11.Cafe14</name>
+        <time>2014-09-24T14:55:37Z</time>
+    </wpt>
+    
+    <wpt lat="37.3742735" lon="127.0114000">
+        <name>line11.Cafe15</name>
+        <time>2014-09-24T14:55:37Z</time>
+    </wpt>
+    
+    <!--
+    line11.
+    -->
+    
+</gpx>
