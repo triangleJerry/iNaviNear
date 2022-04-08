@@ -19,7 +19,7 @@ struct iNaviNearApp: App {
     
     var body: some Scene {
         WindowGroup {
-            NNTabView()
+            ContentView()
         }
     }
 }
