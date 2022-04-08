@@ -9,7 +9,25 @@ import SwiftUI
 
 struct NNTabView: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        TabView {
+            NNMapView()
+                .tabItem {
+                    Image(systemName: "map.fill")
+                    Text("Map")
+                }
+            
+            NNBookMarkView()
+                .tabItem {
+                    Image(systemName: "bookmark")
+                    Text("BookMark")
+                }
+            
+            NNSettingView()
+                .tabItem {
+                    Image(systemName: "gear")
+                    Text("Setting")
+                }
+        }
     }
 }
 
