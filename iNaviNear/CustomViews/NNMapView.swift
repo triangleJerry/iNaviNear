@@ -6,10 +6,18 @@
 //
 
 import SwiftUI
+import iNaviMaps
 
-struct NNMapView: View {
-    var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+struct NNMapView: UIViewRepresentable {
+    
+    func updateUIView(_ uiView: InaviMapView, context: Context) {
+        
+    }
+    
+    func makeUIView(context: Context) -> InaviMapView {
+        let view = InaviMapView()
+        
+        return view
     }
 }
 

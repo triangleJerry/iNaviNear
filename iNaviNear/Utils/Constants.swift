@@ -6,3 +6,7 @@
 //
 
 import Foundation
+
+enum KEY {
+    static let AppKey: String = "buAo2CByq0hoCtQdAFy0"
+}
