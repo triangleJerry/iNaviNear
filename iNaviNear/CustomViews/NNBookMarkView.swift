@@ -9,7 +9,14 @@ import SwiftUI
 
 struct NNBookMarkView: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        List {
+            Text("bookmark 1")
+            Text("bookmark 2")
+            Text("bookmark 3")
+            Text("bookmark 4")
+            Text("bookmark 5")
+        }
+        .listStyle(InsetGroupedListStyle())
     }
 }
 

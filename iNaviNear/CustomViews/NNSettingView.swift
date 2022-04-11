@@ -8,8 +8,42 @@
 import SwiftUI
 
 struct NNSettingView: View {
+    
+    @State private var soundsToggle = true
+    @State private var markersToggle = true
+    @State private var stepperAmount = 10
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        List {
+            Section(header: Text("Options")) {
+                
+                Toggle(isOn: $soundsToggle, label: {
+                    HStack {
+                        Image(systemName: "bell")
+                        Text("Sounds")
+                        
+                    }
+                })
+                
+                Stepper(value: $stepperAmount, label: {
+                    HStack {
+                        Image(systemName: "magnifyingglass")
+                        Text("Search radius")
+                        
+                    }
+                    Text("\(stepperAmount) x")
+                        .fontWeight(.bold)
+                })
+                
+                Toggle(isOn: $markersToggle, label: {
+                    HStack {
+                        Image(systemName: "flag.slash")
+                        Text("Markers Out of Zone")
+                    }
+                })
+            }
+        }
+        .listStyle(InsetGroupedListStyle())
     }
 }
 
