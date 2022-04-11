@@ -12,8 +12,14 @@ import iNaviMaps
 struct NNMapView: View {
     
     var body: some View {
-    
-        CommonMapView()
+        
+        ZStack {
+            CommanMapView()
+        }
+        .overlay(SelfPositionButton()
+            .padding(EdgeInsets(top: 0, leading: 0, bottom: 40, trailing: 40))
+                 , alignment: .bottomTrailing
+        )
     }
 }
 
