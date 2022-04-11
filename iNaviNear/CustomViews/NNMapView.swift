@@ -8,21 +8,17 @@
 import SwiftUI
 import iNaviMaps
 
-struct NNMapView: UIViewRepresentable {
+// overlay Modifier
+struct NNMapView: View {
     
-    func updateUIView(_ uiView: InaviMapView, context: Context) {
-        
-    }
+    var body: some View {
     
-    func makeUIView(context: Context) -> InaviMapView {
-        let view = InaviMapView()
-        
-        return view
+        CommonMapView()
     }
 }
 
 struct NNMapView_Previews: PreviewProvider {
     static var previews: some View {
-        PreViewDev(source: NNMapView())
+        NNMapView()
     }
 }
