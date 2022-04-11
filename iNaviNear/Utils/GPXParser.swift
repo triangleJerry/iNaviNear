@@ -24,7 +24,7 @@ class GPXParser: NSObject, XMLParserDelegate {
     var ele: String = ""
     
     var CafeDataDictionary: [String:CafeData] = [:]
-    var TrkDataArray: [TrkeData] = []
+    var TrkDataArray: [TrkData] = []
     
     
     // MARK: Created function.
@@ -110,7 +110,7 @@ class GPXParser: NSObject, XMLParserDelegate {
             cafeData.star = String( Int.random(in: 1...5) )
             CafeDataDictionary[cafeData.name] = cafeData
         } else if elementName == "trkpt" {
-            var trkData = TrkeData()
+            var trkData = TrkData()
             trkData.ele = ele
             trkData.time = time
             trkData.location = location
