@@ -14,7 +14,7 @@ struct NNMapView: View {
     var body: some View {
         
         ZStack {
-            CommanMapView()
+            CommonMapView()
         }
         .overlay(SelfPositionButton()
             .padding(EdgeInsets(top: 0, leading: 0, bottom: 40, trailing: 40))
