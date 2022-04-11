@@ -11,7 +11,6 @@
 		0315075D27FEAB6D00C79C57 /* NNMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0315075C27FEAB6D00C79C57 /* NNMapView.swift */; };
 		0315075F27FEAB8000C79C57 /* NNBookMarkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0315075E27FEAB8000C79C57 /* NNBookMarkView.swift */; };
 		0315076127FEAB8A00C79C57 /* NNSettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0315076027FEAB8A00C79C57 /* NNSettingView.swift */; };
-		0315076327FEAB9800C79C57 /* BaegUnLake.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 0315076227FEAB9800C79C57 /* BaegUnLake.gpx */; };
 		0315076527FEABBF00C79C57 /* CafeData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0315076427FEABBF00C79C57 /* CafeData.swift */; };
 		0315076727FEABC600C79C57 /* TrkData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0315076627FEABC600C79C57 /* TrkData.swift */; };
 		0315076927FEABDF00C79C57 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0315076827FEABDF00C79C57 /* Constants.swift */; };
@@ -19,10 +18,11 @@
 		0315076D27FEABF100C79C57 /* GPXParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0315076C27FEABF100C79C57 /* GPXParser.swift */; };
 		0315076F27FEABFA00C79C57 /* ShapeUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0315076E27FEABFA00C79C57 /* ShapeUtils.swift */; };
 		0315077127FEAC0400C79C57 /* DataBaseUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0315077027FEAC0400C79C57 /* DataBaseUtils.swift */; };
+		034ABDD2280418180016CB41 /* BaegUnLake.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 034ABDD1280418180016CB41 /* BaegUnLake.gpx */; };
+		034ABDD42804183F0016CB41 /* CafeLocation.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 034ABDD32804183F0016CB41 /* CafeLocation.gpx */; };
 		038012C027FEC31900DFB28D /* PreViewDev.swift in Sources */ = {isa = PBXBuildFile; fileRef = 038012BF27FEC31900DFB28D /* PreViewDev.swift */; };
 		6380A2198F256ED45E10F568 /* Pods_iNaviNear.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C6F557E24ABEAE05B0BB4268 /* Pods_iNaviNear.framework */; };
 		A157003D27FA93BD00DE498F /* iNaviNearApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A157003C27FA93BD00DE498F /* iNaviNearApp.swift */; };
-		A157003F27FA93BD00DE498F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A157003E27FA93BD00DE498F /* ContentView.swift */; };
 		A157004127FA93BF00DE498F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A157004027FA93BF00DE498F /* Assets.xcassets */; };
 		A157004427FA93BF00DE498F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A157004327FA93BF00DE498F /* Preview Assets.xcassets */; };
 /* End PBXBuildFile section */
@@ -32,7 +32,6 @@
 		0315075C27FEAB6D00C79C57 /* NNMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NNMapView.swift; sourceTree = "<group>"; };
 		0315075E27FEAB8000C79C57 /* NNBookMarkView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NNBookMarkView.swift; sourceTree = "<group>"; };
 		0315076027FEAB8A00C79C57 /* NNSettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NNSettingView.swift; sourceTree = "<group>"; };
-		0315076227FEAB9800C79C57 /* BaegUnLake.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = BaegUnLake.gpx; sourceTree = "<group>"; };
 		0315076427FEABBF00C79C57 /* CafeData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CafeData.swift; sourceTree = "<group>"; };
 		0315076627FEABC600C79C57 /* TrkData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrkData.swift; sourceTree = "<group>"; };
 		0315076827FEABDF00C79C57 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -40,11 +39,12 @@
 		0315076C27FEABF100C79C57 /* GPXParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GPXParser.swift; sourceTree = "<group>"; };
 		0315076E27FEABFA00C79C57 /* ShapeUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShapeUtils.swift; sourceTree = "<group>"; };
 		0315077027FEAC0400C79C57 /* DataBaseUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataBaseUtils.swift; sourceTree = "<group>"; };
+		034ABDD1280418180016CB41 /* BaegUnLake.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = BaegUnLake.gpx; sourceTree = "<group>"; };
+		034ABDD32804183F0016CB41 /* CafeLocation.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = CafeLocation.gpx; sourceTree = "<group>"; };
 		038012BF27FEC31900DFB28D /* PreViewDev.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreViewDev.swift; sourceTree = "<group>"; };
 		656074E3D65CADF7BB25020D /* Pods-iNaviNear.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iNaviNear.debug.xcconfig"; path = "Target Support Files/Pods-iNaviNear/Pods-iNaviNear.debug.xcconfig"; sourceTree = "<group>"; };
 		A157003927FA93BD00DE498F /* iNaviNear.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iNaviNear.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A157003C27FA93BD00DE498F /* iNaviNearApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iNaviNearApp.swift; sourceTree = "<group>"; };
-		A157003E27FA93BD00DE498F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		A157004027FA93BF00DE498F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A157004327FA93BF00DE498F /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		B79B62F845690F0A011777C7 /* Pods-iNaviNear.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iNaviNear.release.xcconfig"; path = "Target Support Files/Pods-iNaviNear/Pods-iNaviNear.release.xcconfig"; sourceTree = "<group>"; };
@@ -88,7 +88,8 @@
 		0315075627FEAB3000C79C57 /* Files */ = {
 			isa = PBXGroup;
 			children = (
-				0315076227FEAB9800C79C57 /* BaegUnLake.gpx */,
+				034ABDD1280418180016CB41 /* BaegUnLake.gpx */,
+				034ABDD32804183F0016CB41 /* CafeLocation.gpx */,
 			);
 			path = Files;
 			sourceTree = "<group>";
@@ -96,16 +97,8 @@
 		0315075727FEAB3500C79C57 /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				0315075827FEAB4000C79C57 /* Buttons */,
 			);
 			path = Components;
-			sourceTree = "<group>";
-		};
-		0315075827FEAB4000C79C57 /* Buttons */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Buttons;
 			sourceTree = "<group>";
 		};
 		0315075927FEAB4500C79C57 /* CustomViews */ = {
@@ -155,7 +148,6 @@
 				0315075527FEAB2900C79C57 /* Models */,
 				0315075427FEAB2400C79C57 /* Utils */,
 				A157003C27FA93BD00DE498F /* iNaviNearApp.swift */,
-				A157003E27FA93BD00DE498F /* ContentView.swift */,
 				A157004027FA93BF00DE498F /* Assets.xcassets */,
 				A157004227FA93BF00DE498F /* Preview Content */,
 			);
@@ -238,7 +230,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0315076327FEAB9800C79C57 /* BaegUnLake.gpx in Resources */,
+				034ABDD2280418180016CB41 /* BaegUnLake.gpx in Resources */,
+				034ABDD42804183F0016CB41 /* CafeLocation.gpx in Resources */,
 				A157004427FA93BF00DE498F /* Preview Assets.xcassets in Resources */,
 				A157004127FA93BF00DE498F /* Assets.xcassets in Resources */,
 			);
@@ -295,7 +288,6 @@
 			files = (
 				0315075B27FEAB5D00C79C57 /* NNTabView.swift in Sources */,
 				0315075F27FEAB8000C79C57 /* NNBookMarkView.swift in Sources */,
-				A157003F27FA93BD00DE498F /* ContentView.swift in Sources */,
 				0315076727FEABC600C79C57 /* TrkData.swift in Sources */,
 				0315077127FEAC0400C79C57 /* DataBaseUtils.swift in Sources */,
 				0315076127FEAB8A00C79C57 /* NNSettingView.swift in Sources */,
