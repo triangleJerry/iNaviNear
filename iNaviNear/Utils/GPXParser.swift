@@ -53,14 +53,6 @@ class GPXParser: NSObject, XMLParserDelegate {
         return nil
     }
     
-    func initMemberValue() {
-        self.foundCharacters = ""
-        self.location = INVLatLng()
-        self.name = ""
-        self.time = ""
-        self.ele = ""
-    }
-    
     // MARK: XMLParserDelegate function.
     
     
@@ -125,12 +117,12 @@ class GPXParser: NSObject, XMLParserDelegate {
     
     func parserDidEndDocument(_ parser: XMLParser) {
         
-        for cafedata in CafeDataDictionary.values {
-            print(cafedata.name, cafedata.location.lat, cafedata.location.lng)
-        }
-        
-        for (item, index) in TrkDataArray.enumerated() {
-            print(item, index)
-        }
+//        for cafedata in CafeDataDictionary.values {
+//            print(cafedata.name, cafedata.location.lat, cafedata.location.lng)
+//        }
+//
+//        for (item, index) in TrkDataArray.enumerated() {
+//            print(item, index)
+//        }
     }
 }
