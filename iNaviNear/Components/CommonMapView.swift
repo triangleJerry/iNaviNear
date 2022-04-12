@@ -12,7 +12,9 @@ struct CommonMapView: UIViewRepresentable {
     
     let gpxParser = GPXParser()
     
-    var mapInstance: InaviMapView = InaviMapView()
+    var mapInstance: InaviMapView = InaviMapView() // 맵 뷰의 맵 인스턴스.
+    
+    var circleArray: [INVCircle] = []
     
     func updateUIView(_ uiView: InaviMapView, context: Context) {
 
@@ -30,9 +32,9 @@ struct CommonMapView: UIViewRepresentable {
         filepath = Bundle.main.path(forResource: "CafeLocation", ofType: "gpx")!
         let cafeDic = gpxParser.parsingCafeLocationGPX(filepath: URL(fileURLWithPath: filepath))
 
-        ShapUtils.shapeINVRoute(trkDataArray: trkArray!, mapView: mapInstance)
-        ShapUtils.shapeINVMarker(markerDictionary: cafeDic!, mapView: mapInstance)
-        ShapUtils.shapeCircleRange(trkDataArray: trkArray!, mapView: mapInstance)
+        ShapeUtils.shapeINVRoute(trkDataArray: trkArray!, mapView: mapInstance)
+        ShapeUtils.shapeCircleRange(trkDataArray: trkArray!, mapView: mapInstance, circleArray: &circleArray)
+        ShapeUtils.shapeINVMarker(markerDictionary: cafeDic!, mapView: mapInstance, circleArray: &circleArray)
     }
 }
 
