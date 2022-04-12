@@ -25,6 +25,11 @@ class ShapeUtils {
         route.patternImage = INVImage(name: "inv_pattern_arrow")
         route.patternMargin = 12
         
+        route.touchEvent = { (shape) in
+            print("route touch")
+            return true
+        }
+        
         route.mapView = mapView
     }
     
@@ -40,6 +45,13 @@ class ShapeUtils {
                 circle.fillColor = UIColor( cgColor: UIColor(red: 0.90, green: 0.67, blue: 0.64, alpha: 0.30).cgColor )
                 circle.strokeWidth = 5 // 원의 테두리 두께를 5pt로 설정
                 circle.strokeColor = UIColor(red: 0.83, green: 0.15, blue: 0.19, alpha: 1.00)
+                circle.zIndex = 1
+                circle.touchEvent = nil
+                
+//                circle.touchEvent = { (shape) in
+//                    print("circle touch")
+//                    return true
+//                }
                 
                 circle.mapView = mapView
                 circleArray.append(circle)
@@ -58,7 +70,8 @@ class ShapeUtils {
             marker.iconScale = 0.5
             marker.iconScale += (item.element.star.CGFloatValue()! / 10.0 )
             marker.title = item.element.name
-            marker.iconImage = INV_MARKER_IMAGE_GRAY
+            marker.iconImage = SearchingArea.searchInAreaMarker(circleArray: circleArray, marker: marker)
+            marker.zIndex = 1000
             
             marker.touchEvent = { (shape) in
                 HapticManager.instance.impact(style: .medium)
@@ -75,7 +88,7 @@ class ShapeUtils {
                     infoWindow.marker = marker
                     infoWindow.mapView = mapView
                 }
-                
+
                 return false
             }
             
@@ -93,3 +106,9 @@ class TextInfoWindowDataSource: NSObject, INVImageTextDataSource {
         return ""
     }
 }
+
+//class ImageInfoWindowDataSource: NSObject, INVImageViewDataSource {
+//    func view(with shape: INVShape) -> UIView {
+//        <#code#>
+//    }
+//}
