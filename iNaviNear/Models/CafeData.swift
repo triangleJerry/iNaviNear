@@ -16,4 +16,3 @@ import iNaviMaps
      var include: Bool = false  // 해당 카페가 탐색 범위에 포함되는지, 포함되지 않는지의 여부
      var bookmark: Bool = false  // 사용자의 즐겨찾기 여부
  }
-

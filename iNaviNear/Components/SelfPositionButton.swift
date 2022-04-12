@@ -32,7 +32,7 @@ struct SelfPositionButton: View {
         // 기울기 각도와 베어링 각도는 0으로 설정된다.
         let cameraPosition = INVCameraPosition.init(
             INVLatLng(lat: 37.3792735, lng: 127.0054000),
-            zoom: 16.0)
+            zoom: 14.0)
         
         // 카메라의 위치 설정
         mapView.cameraPosition = cameraPosition

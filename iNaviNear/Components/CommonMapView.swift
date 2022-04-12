@@ -25,14 +25,14 @@ struct CommonMapView: UIViewRepresentable {
     
     init() {
         var filepath = Bundle.main.path(forResource: "LakeLocation", ofType: "gpx")!
-        let trkArray = gpxParser.parsingGpxFile(filepath: URL(fileURLWithPath: filepath), filename: .LakeLocation)
+        let trkArray = gpxParser.parsingLakeLocationGPX(filepath: URL(fileURLWithPath: filepath))
 
         filepath = Bundle.main.path(forResource: "CafeLocation", ofType: "gpx")!
-        let cafeDic = gpxParser.parsingGpxFile(filepath: URL(fileURLWithPath: filepath), filename: .CafeLocation)
+        let cafeDic = gpxParser.parsingCafeLocationGPX(filepath: URL(fileURLWithPath: filepath))
 
-        ShapUtils.shapeINVRoute(trkDataArray: trkArray as! [TrkData], mapview: &mapInstance)
-        ShapUtils.shapeINVMarker(markerDictionary: cafeDic as! [String : CafeData], mapview: &mapInstance)
-        ShapUtils.shapeCircleRange(trkDataArray: trkArray as! [TrkData], mapview: &mapInstance)
+        ShapUtils.shapeINVRoute(trkDataArray: trkArray!, mapView: mapInstance)
+        ShapUtils.shapeINVMarker(markerDictionary: cafeDic!, mapView: mapInstance)
+        ShapUtils.shapeCircleRange(trkDataArray: trkArray!, mapView: mapInstance)
     }
 }
 

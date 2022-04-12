@@ -8,12 +8,6 @@
 import Foundation
 import iNaviMaps
 
-// iNaviNear -> Files
-enum gpxfileName {
-    case LakeLocation
-    case CafeLocation
-}
-
 class GPXParser: NSObject, XMLParserDelegate {
     
     // 태그 내부의 파싱한 정보를 전달해 주기 전까지 임시로 들고있는 객체.
@@ -29,20 +23,29 @@ class GPXParser: NSObject, XMLParserDelegate {
     
     // MARK: Created function.
     
-    // Any - 수정, success 부분 타입 정의 or 혹은 명칭 변경
-    func parsingGpxFile(filepath: URL, filename: gpxfileName) -> Any? {
+    func parsingLakeLocationGPX(filepath: URL) -> [TrkData]? {
         
         let parser = XMLParser(contentsOf: filepath)!
         parser.delegate = self
         let success = parser.parse()
         if success {
             print("gpx file parsing is done.")
-            switch filename {
-            case .LakeLocation:
-                return TrkDataArray
-            case .CafeLocation:
-                return CafeDataDictionary
-            }
+            return TrkDataArray
+        }
+        else {
+            print(parser.parserError.debugDescription)
+        }
+        return nil
+    }
+    
+    func parsingCafeLocationGPX(filepath: URL) -> [String:CafeData]? {
+        
+        let parser = XMLParser(contentsOf: filepath)!
+        parser.delegate = self
+        let success = parser.parse()
+        if success {
+            print("gpx file parsing is done.")
+            return CafeDataDictionary
         }
         else {
             print(parser.parserError.debugDescription)
