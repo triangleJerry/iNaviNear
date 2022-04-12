@@ -19,8 +19,8 @@ struct CommonMapView: UIViewRepresentable {
     func makeUIView(context: Context) -> InaviMapView {
         var view = InaviMapView()
         
-        var filepath = Bundle.main.path(forResource: "BaegUnLake", ofType: "gpx")!
-        let trkArray = gpxParser.parsingGpxFile(filepath: URL(fileURLWithPath: filepath), filename: .BacgUnLake)
+        var filepath = Bundle.main.path(forResource: "LakeLocation", ofType: "gpx")!
+        let trkArray = gpxParser.parsingGpxFile(filepath: URL(fileURLWithPath: filepath), filename: .LakeLocation)
         
         filepath = Bundle.main.path(forResource: "CafeLocation", ofType: "gpx")!
         let cafeDic = gpxParser.parsingGpxFile(filepath: URL(fileURLWithPath: filepath), filename: .CafeLocation)
