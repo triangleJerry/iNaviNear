@@ -13,6 +13,7 @@ struct SelfPositionButton: View {
     
     var body: some View {
         Button(action: {
+            HapticManager.instance.impact(style: .heavy)
             moveLakePosition(mapView: mapView)
         }) {
             Image(systemName: "scope")
@@ -24,6 +25,10 @@ struct SelfPositionButton: View {
         }
         .background(Color.white)
         .cornerRadius(15)
+        .onTapGesture {
+            let impactHeavy = UIImpactFeedbackGenerator(style: .heavy)
+            impactHeavy.impactOccurred()
+        }
     }
     
     // 현재는 호수 위치로 이동하는 로직이지만, 추후 자기 자신의 위치로 이동하는 로직으로 변경 필요.
