@@ -21,15 +21,15 @@ class ShapUtils {
         
         let link = INVRouteLink(coords: latlng, lineColor: UIColor(red: 0.38, green: 0.78, blue: 0.61, alpha: 1.00))
         let route = INVRoute(links: [link])
-        route.patternImage = INVImage(name: "pattern_image")
+        route.lineWidth = 8
+        route.patternImage = INVImage(name: "inv_pattern_arrow")
+        route.patternMargin = 12
         
         route.mapView = mapview
     }
     
     // 아이나비 지도 위에 마커(카페)들을 그려주기 위해 INVMarker가 담긴 배열을 반환해 주는 메소드.
     static func shapeINVMarker(markerDictionary: [String:CafeData], mapview: inout InaviMapView) {
-        
-        var arr: [INVMarker] = []
         
         for item in markerDictionary.values.enumerated() {
             let marker = INVMarker()
@@ -39,7 +39,19 @@ class ShapUtils {
             marker.iconScale = 0.5
             marker.iconScale += (item.element.star.CGFloatValue()! / 10.0 )
             marker.title = item.element.name
-            marker.iconImage = INV_MARKER_IMAGE_YELLOW
+            marker.iconImage = INV_MARKER_IMAGE_RED
+            
+            marker.touchEvent = { (shape) in
+                // 지도 위에 정보창 추가
+                let textInfoWindowDataSource = TextInfoWindowDataSource()
+                let infoWindow = INVInfoWindow()
+                infoWindow.position = item.element.location
+                infoWindow.imageDataSource = textInfoWindowDataSource
+//                infoWindow.mapView = mapview
+                infoWindow.marker = marker
+                
+                return false
+            }
             
             marker.mapView = mapview
         }
@@ -60,5 +72,12 @@ class ShapUtils {
                 circle.mapView = mapview
             }
         }
+    }
+}
+
+// 텍스트를 표출하는 INVImageTextDataSource 클래스
+class TextInfoWindowDataSource: NSObject, INVImageTextDataSource {
+    func title(with shape: INVShape) -> String {
+        return "정보 창 내용"
     }
 }
