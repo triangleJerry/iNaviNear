@@ -10,7 +10,7 @@ import iNaviMaps
 
 // iNaviNear -> Files
 enum gpxfileName {
-    case BacgUnLake
+    case LakeLocation
     case CafeLocation
 }
 
@@ -38,7 +38,7 @@ class GPXParser: NSObject, XMLParserDelegate {
         if success {
             print("gpx file parsing is done.")
             switch filename {
-            case .BacgUnLake:
+            case .LakeLocation:
                 return TrkDataArray
             case .CafeLocation:
                 return CafeDataDictionary
