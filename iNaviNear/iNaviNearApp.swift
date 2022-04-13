@@ -15,6 +15,14 @@ struct iNaviNearApp: App {
     init() {
         // INVMap 앱키 설정
         INVMapSdk.sharedInstance().appKey = KEY.AppKey
+        let userDefaults = UserDefaults.standard
+        userDefaults.register(
+            defaults: [
+                "sounds": true,
+                "markers": true,
+                "area": 100
+            ]
+        )
     }
     
     var body: some Scene {
