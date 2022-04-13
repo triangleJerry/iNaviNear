@@ -8,10 +8,13 @@
 import SwiftUI
 import iNaviMaps
 
-// overlay Modifier
 struct NNMapView: View {
     
     var mapView: CommonMapView = CommonMapView()
+    
+    let notiEvent = NotificationCenter.default.publisher(for: NSNotification.Name("notiEvent"))
+    
+    @State private var showingAlert: Bool = false
     
     var body: some View {
         
@@ -23,6 +26,12 @@ struct NNMapView: View {
             .padding(EdgeInsets(top: 0, leading: 0, bottom: 40, trailing: 40))
                  , alignment: .bottomTrailing
         )
+        .alert(isPresented: $showingAlert) {
+            Alert(title: Text("Title"), message: Text("message"), dismissButton: .default(Text("Dismiss")))
+        }
+        .onReceive(notiEvent) { _ in
+            showingAlert.toggle()
+        }
     }
 }
 

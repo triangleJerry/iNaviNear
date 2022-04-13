@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import UIKit
 import iNaviMaps
 
 class ShapeUtils {
@@ -48,10 +49,10 @@ class ShapeUtils {
                 circle.zIndex = 1
                 circle.touchEvent = nil
                 
-//                circle.touchEvent = { (shape) in
-//                    print("circle touch")
-//                    return true
-//                }
+                //                circle.touchEvent = { (shape) in
+                //                    print("circle touch")
+                //                    return true
+                //                }
                 
                 circle.mapView = mapView
                 circleArray.append(circle)
@@ -83,12 +84,21 @@ class ShapeUtils {
                     // 정보 창이 마커 위에 표출되지 않고 있는 경우
                     let infoWindow = INVInfoWindow()
                     let textInfoWindowDataSource = TextInfoWindowDataSource()
+                    
                     infoWindow.position = item.element.location
                     infoWindow.imageDataSource = textInfoWindowDataSource
+                    
+                    // 즐겨찾기를 등록할지의 여부를 묻는 Alert 팝업.
+                    infoWindow.touchEvent = { (shape) in
+                        HapticManager.instance.impact(style: .medium)
+                        NotificationCenter.default.post(name: Notification.Name("notiEvent"), object: nil)
+                        
+                        return true
+                    }
                     infoWindow.marker = marker
                     infoWindow.mapView = mapView
                 }
-
+                
                 return false
             }
             
@@ -107,8 +117,18 @@ class TextInfoWindowDataSource: NSObject, INVImageTextDataSource {
     }
 }
 
-//class ImageInfoWindowDataSource: NSObject, INVImageViewDataSource {
-//    func view(with shape: INVShape) -> UIView {
-//        <#code#>
-//    }
-//}
+class ImageInfoWindowDataSource: NSObject, INVImageViewDataSource {
+    var rootView: CustomInfoWindowView!
+    
+    func view(with shape: INVShape) -> UIView {
+        
+        guard shape is INVInfoWindow else { return rootView }
+        
+        if rootView == nil {
+            rootView = Bundle.main.loadNibNamed("CustomInfoWindowView", owner: nil, options: nil)?.first as? CustomInfoWindowView
+        }
+        rootView.layoutIfNeeded()
+        return rootView
+    }
+}
+

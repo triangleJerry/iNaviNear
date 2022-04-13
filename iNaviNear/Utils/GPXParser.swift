@@ -115,8 +115,8 @@ class GPXParser: NSObject, XMLParserDelegate {
         foundCharacters = ""
     }
     
-    func parserDidEndDocument(_ parser: XMLParser) {
-        
+//    func parserDidEndDocument(_ parser: XMLParser) {
+//        
 //        for cafedata in CafeDataDictionary.values {
 //            print(cafedata.name, cafedata.location.lat, cafedata.location.lng)
 //        }
@@ -124,5 +124,5 @@ class GPXParser: NSObject, XMLParserDelegate {
 //        for (item, index) in TrkDataArray.enumerated() {
 //            print(item, index)
 //        }
-    }
+//    }
 }
