@@ -21,7 +21,8 @@ struct CommonMapView: UIViewRepresentable {
     }
     
     func makeUIView(context: Context) -> InaviMapView {
-
+        mapInstance.showLocationButton = true // 현위치 버튼 표출
+        mapInstance.showZoomControl = true // 줌 컨트롤러를 표출
         return mapInstance
     }
     
@@ -35,6 +36,7 @@ struct CommonMapView: UIViewRepresentable {
         ShapeUtils.shapeINVRoute(trkDataArray: trkArray!, mapView: mapInstance)
         ShapeUtils.shapeCircleRange(trkDataArray: trkArray!, mapView: mapInstance, circleArray: &circleArray)
         ShapeUtils.shapeINVMarker(markerDictionary: cafeDic!, mapView: mapInstance, circleArray: &circleArray)
+        
     }
 }
 

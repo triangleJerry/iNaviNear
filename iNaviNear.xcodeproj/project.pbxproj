@@ -18,10 +18,14 @@
 		0315076D27FEABF100C79C57 /* GPXParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0315076C27FEABF100C79C57 /* GPXParser.swift */; };
 		0315076F27FEABFA00C79C57 /* ShapeUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0315076E27FEABFA00C79C57 /* ShapeUtils.swift */; };
 		0315077127FEAC0400C79C57 /* DataBaseUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0315077027FEAC0400C79C57 /* DataBaseUtils.swift */; };
+		031EA288280658A7000A506B /* CustomInfoWindowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 031EA287280658A7000A506B /* CustomInfoWindowView.swift */; };
 		034ABDD2280418180016CB41 /* LakeLocation.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 034ABDD1280418180016CB41 /* LakeLocation.gpx */; };
 		034ABDD42804183F0016CB41 /* CafeLocation.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 034ABDD32804183F0016CB41 /* CafeLocation.gpx */; };
 		034ABDD6280419280016CB41 /* CommonMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034ABDD5280419280016CB41 /* CommonMapView.swift */; };
 		034ABDD828041BC20016CB41 /* SelfPositionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034ABDD728041BC20016CB41 /* SelfPositionButton.swift */; };
+		037212132805202800CD7CA2 /* SearchingArea.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037212122805202800CD7CA2 /* SearchingArea.swift */; };
+		03721215280549B700CD7CA2 /* HapticManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03721214280549B700CD7CA2 /* HapticManager.swift */; };
+		037212192805840300CD7CA2 /* CustomInfoWindowView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 037212182805840300CD7CA2 /* CustomInfoWindowView.xib */; };
 		038012C027FEC31900DFB28D /* PreViewDev.swift in Sources */ = {isa = PBXBuildFile; fileRef = 038012BF27FEC31900DFB28D /* PreViewDev.swift */; };
 		6380A2198F256ED45E10F568 /* Pods_iNaviNear.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C6F557E24ABEAE05B0BB4268 /* Pods_iNaviNear.framework */; };
 		A157003D27FA93BD00DE498F /* iNaviNearApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A157003C27FA93BD00DE498F /* iNaviNearApp.swift */; };
@@ -41,10 +45,14 @@
 		0315076C27FEABF100C79C57 /* GPXParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GPXParser.swift; sourceTree = "<group>"; };
 		0315076E27FEABFA00C79C57 /* ShapeUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShapeUtils.swift; sourceTree = "<group>"; };
 		0315077027FEAC0400C79C57 /* DataBaseUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataBaseUtils.swift; sourceTree = "<group>"; };
+		031EA287280658A7000A506B /* CustomInfoWindowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomInfoWindowView.swift; sourceTree = "<group>"; };
 		034ABDD1280418180016CB41 /* LakeLocation.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = LakeLocation.gpx; sourceTree = "<group>"; };
 		034ABDD32804183F0016CB41 /* CafeLocation.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = CafeLocation.gpx; sourceTree = "<group>"; };
 		034ABDD5280419280016CB41 /* CommonMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CommonMapView.swift; path = iNaviNear/Components/CommonMapView.swift; sourceTree = SOURCE_ROOT; };
 		034ABDD728041BC20016CB41 /* SelfPositionButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelfPositionButton.swift; sourceTree = "<group>"; };
+		037212122805202800CD7CA2 /* SearchingArea.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchingArea.swift; sourceTree = "<group>"; };
+		03721214280549B700CD7CA2 /* HapticManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticManager.swift; sourceTree = "<group>"; };
+		037212182805840300CD7CA2 /* CustomInfoWindowView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomInfoWindowView.xib; sourceTree = "<group>"; };
 		038012BF27FEC31900DFB28D /* PreViewDev.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreViewDev.swift; sourceTree = "<group>"; };
 		656074E3D65CADF7BB25020D /* Pods-iNaviNear.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iNaviNear.debug.xcconfig"; path = "Target Support Files/Pods-iNaviNear/Pods-iNaviNear.debug.xcconfig"; sourceTree = "<group>"; };
 		A157003927FA93BD00DE498F /* iNaviNear.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iNaviNear.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -76,6 +84,7 @@
 				0315076E27FEABFA00C79C57 /* ShapeUtils.swift */,
 				0315077027FEAC0400C79C57 /* DataBaseUtils.swift */,
 				038012BF27FEC31900DFB28D /* PreViewDev.swift */,
+				03721214280549B700CD7CA2 /* HapticManager.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -85,6 +94,7 @@
 			children = (
 				0315076427FEABBF00C79C57 /* CafeData.swift */,
 				0315076627FEABC600C79C57 /* TrkData.swift */,
+				037212122805202800CD7CA2 /* SearchingArea.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -110,12 +120,22 @@
 		0315075927FEAB4500C79C57 /* CustomViews */ = {
 			isa = PBXGroup;
 			children = (
+				031EA286280657CD000A506B /* SDK_UIView */,
 				0315075A27FEAB5D00C79C57 /* NNTabView.swift */,
 				0315075C27FEAB6D00C79C57 /* NNMapView.swift */,
 				0315075E27FEAB8000C79C57 /* NNBookMarkView.swift */,
 				0315076027FEAB8A00C79C57 /* NNSettingView.swift */,
 			);
 			path = CustomViews;
+			sourceTree = "<group>";
+		};
+		031EA286280657CD000A506B /* SDK_UIView */ = {
+			isa = PBXGroup;
+			children = (
+				037212182805840300CD7CA2 /* CustomInfoWindowView.xib */,
+				031EA287280658A7000A506B /* CustomInfoWindowView.swift */,
+			);
+			path = SDK_UIView;
 			sourceTree = "<group>";
 		};
 		1273A39A3C9C37DB2C6F581C /* Pods */ = {
@@ -238,6 +258,7 @@
 			files = (
 				034ABDD2280418180016CB41 /* LakeLocation.gpx in Resources */,
 				034ABDD42804183F0016CB41 /* CafeLocation.gpx in Resources */,
+				037212192805840300CD7CA2 /* CustomInfoWindowView.xib in Resources */,
 				A157004427FA93BF00DE498F /* Preview Assets.xcassets in Resources */,
 				A157004127FA93BF00DE498F /* Assets.xcassets in Resources */,
 			);
@@ -294,7 +315,9 @@
 			files = (
 				0315075B27FEAB5D00C79C57 /* NNTabView.swift in Sources */,
 				0315075F27FEAB8000C79C57 /* NNBookMarkView.swift in Sources */,
+				031EA288280658A7000A506B /* CustomInfoWindowView.swift in Sources */,
 				0315076727FEABC600C79C57 /* TrkData.swift in Sources */,
+				03721215280549B700CD7CA2 /* HapticManager.swift in Sources */,
 				0315077127FEAC0400C79C57 /* DataBaseUtils.swift in Sources */,
 				0315076127FEAB8A00C79C57 /* NNSettingView.swift in Sources */,
 				0315076F27FEABFA00C79C57 /* ShapeUtils.swift in Sources */,
@@ -305,6 +328,7 @@
 				0315076527FEABBF00C79C57 /* CafeData.swift in Sources */,
 				0315075D27FEAB6D00C79C57 /* NNMapView.swift in Sources */,
 				0315076927FEABDF00C79C57 /* Constants.swift in Sources */,
+				037212132805202800CD7CA2 /* SearchingArea.swift in Sources */,
 				0315076D27FEABF100C79C57 /* GPXParser.swift in Sources */,
 				034ABDD828041BC20016CB41 /* SelfPositionButton.swift in Sources */,
 			);
@@ -439,6 +463,8 @@
 				DEVELOPMENT_TEAM = 2Z9N6W59ZG;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "자신의 위치를 확인하기 위해 권한이 필요합니다.";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "자신의 위치를 확인하기 위해 권한이 필요합니다.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -470,6 +496,8 @@
 				DEVELOPMENT_TEAM = 2Z9N6W59ZG;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "자신의 위치를 확인하기 위해 권한이 필요합니다.";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "자신의 위치를 확인하기 위해 권한이 필요합니다.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
