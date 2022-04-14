@@ -18,3 +18,7 @@ extension String {
     return CGFloat(doubleValue)
   }
 }
+
+extension Notification.Name {
+    static let markerInfoWindowEvent = Notification.Name("markerInfoWindowEvent")
+}

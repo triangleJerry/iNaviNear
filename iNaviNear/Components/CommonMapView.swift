@@ -10,33 +10,18 @@ import iNaviMaps
 
 struct CommonMapView: UIViewRepresentable {
     
-    let gpxParser = GPXParser()
-    
     var mapInstance: InaviMapView = InaviMapView() // 맵 뷰의 맵 인스턴스.
     
-    var circleArray: [INVCircle] = []
-    
     func updateUIView(_ uiView: InaviMapView, context: Context) {
-
     }
     
     func makeUIView(context: Context) -> InaviMapView {
-        mapInstance.showLocationButton = true // 현위치 버튼 표출
-        mapInstance.showZoomControl = true // 줌 컨트롤러를 표출
         return mapInstance
     }
     
     init() {
-        var filepath = Bundle.main.path(forResource: "LakeLocation", ofType: "gpx")!
-        let trkArray = gpxParser.parsingLakeLocationGPX(filepath: URL(fileURLWithPath: filepath))
-
-        filepath = Bundle.main.path(forResource: "CafeLocation", ofType: "gpx")!
-        let cafeDic = gpxParser.parsingCafeLocationGPX(filepath: URL(fileURLWithPath: filepath))
-
-        ShapeUtils.shapeINVRoute(trkDataArray: trkArray!, mapView: mapInstance)
-        ShapeUtils.shapeCircleRange(trkDataArray: trkArray!, mapView: mapInstance, circleArray: &circleArray)
-        ShapeUtils.shapeINVMarker(markerDictionary: cafeDic!, mapView: mapInstance, circleArray: &circleArray)
-        
+        mapInstance.showLocationButton = true // 현위치 버튼 표출
+        mapInstance.showZoomControl = true // 줌 컨트롤러를 표출
     }
 }
 

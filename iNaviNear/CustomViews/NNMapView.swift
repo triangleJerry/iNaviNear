@@ -12,9 +12,12 @@ struct NNMapView: View {
     
     var mapView: CommonMapView = CommonMapView()
     
-    let notiEvent = NotificationCenter.default.publisher(for: NSNotification.Name("notiEvent"))
+    // 아이나비 맵뷰에서 마커 -> 정보창을 클릭했을 때, 북마크 등록을 위해 이벤트를 감지해주는 notification.
+    let markerInfoWindowEvent = NotificationCenter.default.publisher(for: NSNotification.Name.markerInfoWindowEvent)
     
     @State private var showingAlert: Bool = false
+    @State private var newDrawingMap: Bool = false
+    
     
     var body: some View {
         
@@ -26,12 +29,27 @@ struct NNMapView: View {
             .padding(EdgeInsets(top: 0, leading: 0, bottom: 40, trailing: 40))
                  , alignment: .bottomTrailing
         )
-        .alert(isPresented: $showingAlert) {
-            Alert(title: Text("Title"), message: Text("message"), dismissButton: .default(Text("Dismiss")))
+        .onChange(of: newDrawingMap) { _ in
+            //mapView.initmap()
         }
-        .onReceive(notiEvent) { _ in
+        .alert(isPresented: $showingAlert) {
+            Alert(title: Text("카페를 북마크에 등록하시겠습니까?"),
+                  message: Text("북마크에 등록을 통해, 손쉽게 지도에서 해당 카페를 찾을 수 있습니다"),
+                  primaryButton: .cancel(Text("취소"), action: {
+                //some Action
+            }),
+                  secondaryButton: .default(Text("등록"), action: {
+                //ShapeObjectsBundle.shared.removeAllMapShapeObjects()
+                // some Action
+            }))
+        }
+        .onReceive(markerInfoWindowEvent) { _ in
             showingAlert.toggle()
         }
+    }
+    
+    init() {
+        ShapeObjectsBundle.shared.drawMapShapeObjects(mapView: mapView.mapInstance)
     }
 }
 
