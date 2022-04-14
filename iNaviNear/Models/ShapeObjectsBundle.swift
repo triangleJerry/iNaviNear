@@ -29,12 +29,14 @@ class ShapeObjectsBundle {
     }
     
     func removeAllMapShapeObjects() {
+        
         ShapeUtils.removeCircleRanges(circleArray: &circleArray)
         ShapeUtils.removeINVMarkers(markerArray: &markerArray)
     }
     
     
     func drawMapShapeObjects(mapView: InaviMapView) {
+        
         ShapeUtils.shapeINVRoutes(trkDataArray: trkArray, mapView: mapView)
         ShapeUtils.shapeCircleRanges(trkDataArray: trkArray, mapView: mapView, circleArray: &circleArray)
         ShapeUtils.shapeINVMarkers(markerDictionary: cafeDic, mapView: mapView, circleArray: &circleArray, markerArray: &markerArray)

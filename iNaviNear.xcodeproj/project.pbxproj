@@ -17,7 +17,7 @@
 		0315076B27FEABE700C79C57 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0315076A27FEABE700C79C57 /* Extensions.swift */; };
 		0315076D27FEABF100C79C57 /* GPXParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0315076C27FEABF100C79C57 /* GPXParser.swift */; };
 		0315076F27FEABFA00C79C57 /* ShapeUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0315076E27FEABFA00C79C57 /* ShapeUtils.swift */; };
-		0315077127FEAC0400C79C57 /* DataBaseUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0315077027FEAC0400C79C57 /* DataBaseUtils.swift */; };
+		03407D342807D739005F36FF /* ShapeObjectsBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03407D332807D739005F36FF /* ShapeObjectsBundle.swift */; };
 		034ABDD2280418180016CB41 /* LakeLocation.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 034ABDD1280418180016CB41 /* LakeLocation.gpx */; };
 		034ABDD42804183F0016CB41 /* CafeLocation.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 034ABDD32804183F0016CB41 /* CafeLocation.gpx */; };
 		034ABDD6280419280016CB41 /* CommonMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034ABDD5280419280016CB41 /* CommonMapView.swift */; };
@@ -42,7 +42,7 @@
 		0315076A27FEABE700C79C57 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		0315076C27FEABF100C79C57 /* GPXParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GPXParser.swift; sourceTree = "<group>"; };
 		0315076E27FEABFA00C79C57 /* ShapeUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShapeUtils.swift; sourceTree = "<group>"; };
-		0315077027FEAC0400C79C57 /* DataBaseUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataBaseUtils.swift; sourceTree = "<group>"; };
+		03407D332807D739005F36FF /* ShapeObjectsBundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShapeObjectsBundle.swift; sourceTree = "<group>"; };
 		034ABDD1280418180016CB41 /* LakeLocation.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = LakeLocation.gpx; sourceTree = "<group>"; };
 		034ABDD32804183F0016CB41 /* CafeLocation.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = CafeLocation.gpx; sourceTree = "<group>"; };
 		034ABDD5280419280016CB41 /* CommonMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CommonMapView.swift; path = iNaviNear/Components/CommonMapView.swift; sourceTree = SOURCE_ROOT; };
@@ -78,7 +78,6 @@
 				0315076A27FEABE700C79C57 /* Extensions.swift */,
 				0315076C27FEABF100C79C57 /* GPXParser.swift */,
 				0315076E27FEABFA00C79C57 /* ShapeUtils.swift */,
-				0315077027FEAC0400C79C57 /* DataBaseUtils.swift */,
 				038012BF27FEC31900DFB28D /* PreViewDev.swift */,
 				03721214280549B700CD7CA2 /* HapticManager.swift */,
 			);
@@ -91,6 +90,7 @@
 				0315076427FEABBF00C79C57 /* CafeData.swift */,
 				0315076627FEABC600C79C57 /* TrkData.swift */,
 				037212122805202800CD7CA2 /* SearchingArea.swift */,
+				03407D332807D739005F36FF /* ShapeObjectsBundle.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -298,11 +298,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				03407D342807D739005F36FF /* ShapeObjectsBundle.swift in Sources */,
 				0315075B27FEAB5D00C79C57 /* NNTabView.swift in Sources */,
 				0315075F27FEAB8000C79C57 /* NNBookMarkView.swift in Sources */,
 				0315076727FEABC600C79C57 /* TrkData.swift in Sources */,
 				03721215280549B700CD7CA2 /* HapticManager.swift in Sources */,
-				0315077127FEAC0400C79C57 /* DataBaseUtils.swift in Sources */,
 				0315076127FEAB8A00C79C57 /* NNSettingView.swift in Sources */,
 				0315076F27FEABFA00C79C57 /* ShapeUtils.swift in Sources */,
 				034ABDD6280419280016CB41 /* CommonMapView.swift in Sources */,

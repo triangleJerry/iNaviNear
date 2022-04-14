@@ -29,9 +29,6 @@ struct NNMapView: View {
             .padding(EdgeInsets(top: 0, leading: 0, bottom: 40, trailing: 40))
                  , alignment: .bottomTrailing
         )
-        .onChange(of: newDrawingMap) { _ in
-            //mapView.initmap()
-        }
         .alert(isPresented: $showingAlert) {
             Alert(title: Text("카페를 북마크에 등록하시겠습니까?"),
                   message: Text("북마크에 등록을 통해, 손쉽게 지도에서 해당 카페를 찾을 수 있습니다"),
@@ -39,13 +36,16 @@ struct NNMapView: View {
                 //some Action
             }),
                   secondaryButton: .default(Text("등록"), action: {
-                //ShapeObjectsBundle.shared.removeAllMapShapeObjects()
                 // some Action
             }))
         }
         .onReceive(markerInfoWindowEvent) { _ in
             showingAlert.toggle()
         }
+        .onAppear(perform: {
+            ShapeObjectsBundle.shared.removeAllMapShapeObjects()
+            ShapeObjectsBundle.shared.drawMapShapeObjects(mapView: mapView.mapInstance)
+        })
     }
     
     init() {

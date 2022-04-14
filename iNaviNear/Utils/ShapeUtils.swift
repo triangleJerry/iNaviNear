@@ -11,6 +11,9 @@ import iNaviMaps
 
 class ShapeUtils {
     
+    // MARK: iNaviMaps Shape Objects func.
+    
+    
     // 아이나비 지도 위에 루트를 그려주기 위해 객체 INVRoute를 만들어 반환해 주는 메소드.
     static func shapeINVRoutes(trkDataArray: [TrkData], mapView: InaviMapView) {
         
@@ -46,23 +49,6 @@ class ShapeUtils {
                 circleArray.append(circle)
             }
         }
-    }
-    
-    
-    // 아이나비 지도 위의 원형 범위들을 일괄적으로 지워주는 메소드.
-    static func removeCircleRanges(circleArray: inout [INVCircle]) {
-        for circle in circleArray.enumerated() {
-            circle.element.mapView = nil
-        }
-        circleArray = []
-    }
-    
-    // 아이나비 지도 위의 원형 범위들을 일괄적으로 지워주는 메소드.
-    static func removeINVMarkers(markerArray: inout [INVMarker]) {
-        for marker in markerArray.enumerated() {
-            marker.element.mapView = nil
-        }
-        markerArray = []
     }
     
     // 아이나비 지도 위에 마커(카페)들을 그려주기 위해 INVMarker가 담긴 배열을 반환해 주는 메소드.
@@ -109,6 +95,25 @@ class ShapeUtils {
             marker.mapView = mapView
             markerArray.append(marker)
         }
+    }
+    
+    
+    // MARK: iNaviMaps remove Objects func.
+    
+    // 아이나비 지도 위의 원형 범위들을 일괄적으로 지워주는 메소드.
+    static func removeCircleRanges(circleArray: inout [INVCircle]) {
+        for circle in circleArray.enumerated() {
+            circle.element.mapView = nil
+        }
+        circleArray = []
+    }
+    
+    // 아이나비 지도 위의 원형 범위들을 일괄적으로 지워주는 메소드.
+    static func removeINVMarkers(markerArray: inout [INVMarker]) {
+        for marker in markerArray.enumerated() {
+            marker.element.mapView = nil
+        }
+        markerArray = []
     }
 }
 
