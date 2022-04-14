@@ -18,10 +18,10 @@ class SearchingArea {
             let markerLocation = CLLocation(latitude: marker.position.lat, longitude: marker.position.lng)
             
             let distanceInMeters = circleCenter.distance(from: markerLocation) // result is in meters
-            print(String(format: "The distance to my buddy is \(distanceInMeters)m \(marker.title)"))
             
             // 범위에 포함되어 있는 마커라면 파란색으로, 벗어난 마커라면 회색으로.
-            if 100 >= distanceInMeters { // 100m보다 먼, 탐색 범위 밖의 마커들
+            if UserDefaults.standard.integer(forKey: "area") >= Int(distanceInMeters) { // 탐색 범위 밖의 마커들
+                print(String(format: "The distance to my buddy is \(distanceInMeters)m \(marker.title)"))
                 return INV_MARKER_IMAGE_BLUE
             }
         }
