@@ -65,6 +65,11 @@ class ShapeUtils {
             marker.title = item.element.name
             marker.iconImage = SearchingArea.searchInAreaMarker(circleArray: circleArray, marker: marker)
             
+            if UserDefaults.standard.bool(forKey: "markers") == false
+                && marker.iconImage == INV_MARKER_IMAGE_GRAY {
+                continue
+            }
+            
             marker.touchEvent = { (shape) in
                 HapticManager.instance.impact(style: .medium)
                 if marker.infoWindow != nil {
