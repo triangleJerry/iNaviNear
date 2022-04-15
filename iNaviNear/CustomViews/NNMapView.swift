@@ -21,14 +21,13 @@ struct NNMapView: View {
     
     var body: some View {
         
-        ZStack {
+        ZStack(alignment: .bottomTrailing) {
             mapView
-                .edgesIgnoringSafeArea([.top])
+                .edgesIgnoringSafeArea([.top]) // 상단 노치부분까지 지도가 덮을 수 있도록
+            
+            SelfPositionButton(mapView: mapView.mapInstance)
+                .padding(EdgeInsets(top: 0, leading: 0, bottom: 40, trailing: 40))
         }
-        .overlay(SelfPositionButton(mapView: mapView.mapInstance)
-            .padding(EdgeInsets(top: 0, leading: 0, bottom: 40, trailing: 40))
-                 , alignment: .bottomTrailing
-        )
         .alert(isPresented: $showingAlert) {
             Alert(title: Text("카페를 북마크에 등록하시겠습니까?"),
                   message: Text("북마크에 등록을 통해, 손쉽게 지도에서 해당 카페를 찾을 수 있습니다"),
