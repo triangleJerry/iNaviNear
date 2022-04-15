@@ -52,10 +52,10 @@ class ShapeUtils {
     }
     
     // 아이나비 지도 위에 마커(카페)들을 그려주기 위해 INVMarker가 담긴 배열을 반환해 주는 메소드.
-    static func shapeINVMarkers(markerDictionary: [String:CafeData], mapView: InaviMapView, circleArray: inout [INVCircle], markerArray: inout [INVMarker]) {
+    static func shapeINVMarkers(CafeDataArray: [CafeData], mapView: InaviMapView, circleArray: inout [INVCircle], markerArray: inout [INVMarker]) {
         markerArray = []
         
-        for item in markerDictionary.values.enumerated() {
+        for item in CafeDataArray.enumerated() {
             let marker = INVMarker()
             
             // 마커 커스텀

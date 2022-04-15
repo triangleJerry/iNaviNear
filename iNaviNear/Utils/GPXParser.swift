@@ -17,7 +17,7 @@ class GPXParser: NSObject, XMLParserDelegate {
     var time: String = ""
     var ele: String = ""
     
-    var CafeDataDictionary: [String:CafeData] = [:]
+    var CafeDataArray: [CafeData] = []
     var TrkDataArray: [TrkData] = []
     
     
@@ -38,14 +38,14 @@ class GPXParser: NSObject, XMLParserDelegate {
         return nil
     }
     
-    func parsingCafeLocationGPX(filepath: URL) -> [String:CafeData]? {
+    func parsingCafeLocationGPX(filepath: URL) -> [CafeData]? {
         
         let parser = XMLParser(contentsOf: filepath)!
         parser.delegate = self
         let success = parser.parse()
         if success {
             print("gpx file parsing is done.")
-            return CafeDataDictionary
+            return CafeDataArray
         }
         else {
             print(parser.parserError.debugDescription)
@@ -103,7 +103,7 @@ class GPXParser: NSObject, XMLParserDelegate {
             cafeData.name = name
             cafeData.location = location
             cafeData.star = String( Int.random(in: 1...5) )
-            CafeDataDictionary[cafeData.name] = cafeData
+            CafeDataArray.append(cafeData)
         } else if elementName == "trkpt" {
             var trkData = TrkData()
             trkData.ele = ele

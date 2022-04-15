@@ -17,7 +17,7 @@ class ShapeObjectsBundle {
     var circleArray: [INVCircle] = []
     var markerArray: [INVMarker] = []
     var trkArray: [TrkData] = []
-    var cafeDic: [String:CafeData] = [:]
+    var CafeDataArray: [CafeData] = []
     
     private init() {
         
@@ -25,7 +25,7 @@ class ShapeObjectsBundle {
         trkArray = gpxParser.parsingLakeLocationGPX(filepath: URL(fileURLWithPath: filepath))!
 
         filepath = Bundle.main.path(forResource: "CafeLocation", ofType: "gpx")!
-        cafeDic = gpxParser.parsingCafeLocationGPX(filepath: URL(fileURLWithPath: filepath))!
+        CafeDataArray = gpxParser.parsingCafeLocationGPX(filepath: URL(fileURLWithPath: filepath))!
     }
     
     func removeAllMapShapeObjects() {
@@ -39,6 +39,6 @@ class ShapeObjectsBundle {
         
         ShapeUtils.shapeINVRoutes(trkDataArray: trkArray, mapView: mapView)
         ShapeUtils.shapeCircleRanges(trkDataArray: trkArray, mapView: mapView, circleArray: &circleArray)
-        ShapeUtils.shapeINVMarkers(markerDictionary: cafeDic, mapView: mapView, circleArray: &circleArray, markerArray: &markerArray)
+        ShapeUtils.shapeINVMarkers(CafeDataArray: CafeDataArray, mapView: mapView, circleArray: &circleArray, markerArray: &markerArray)
     }
 }
