@@ -8,7 +8,7 @@
 import Foundation
 import iNaviMaps
 
-struct TrkData {
+struct TrkData: GPXDataProtocol {
 
     var ele: String = "" // 위치 정보: 고도
     var time: String = "" // 시간
