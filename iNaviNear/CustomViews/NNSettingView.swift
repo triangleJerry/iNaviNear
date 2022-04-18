@@ -28,7 +28,7 @@ struct NNSettingView: View {
                 }
                 
                 // 카페 탐색 범위
-                Stepper(value: $stepperAmount, label: {
+                Stepper(value: $stepperAmount,in: 1...300, label: {
                     HStack {
                         Image(systemName: "magnifyingglass")
                         Text("Search radius")
