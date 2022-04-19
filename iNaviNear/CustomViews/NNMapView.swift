@@ -11,6 +11,7 @@ import iNaviMaps
 struct NNMapView: View {
     
     var mapView: CommonMapView = CommonMapView()
+    var clusterManager: INVClusterManager? = nil
     
     // 아이나비 맵뷰에서 마커 -> 정보창을 클릭했을 때, 북마크 등록을 위해 이벤트를 감지해주는 notification.
     let markerInfoWindowEvent = NotificationCenter.default.publisher(for: NSNotification.Name.markerInfoWindowEvent)
@@ -49,6 +50,7 @@ struct NNMapView: View {
     
     init() {
         ShapeObjectsBundle.shared.drawMapShapeObjects(mapView: mapView.mapInstance)
+        clusterManager = INVClusterManager.init(mapView: mapView.mapInstance)
     }
 }
 
