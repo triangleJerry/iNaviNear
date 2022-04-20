@@ -97,6 +97,7 @@ class ShapeUtils {
     static func removeINVMarkers(markerArray: [INVMarker]) {
         for marker in markerArray.enumerated() {
             
+            marker.element.infoWindow?.mapView = nil
             marker.element.mapView = nil
         }
     }
