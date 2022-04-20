@@ -38,4 +38,13 @@ extension View {
                duration: TimeInterval) -> some View {
         self.modifier(Toast(message: message, isShowing: isShowing, config: .init(duration: duration)))
     }
+    
+    @ViewBuilder
+    func `if`<Content: View>(_ conditional: Bool, content: (Self) -> Content) -> some View {
+         if conditional {
+             content(self)
+         } else {
+             self
+         }
+     }
 }

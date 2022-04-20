@@ -12,14 +12,22 @@ struct NNBookMarkView: View {
     @Binding var goIndex: Int
     @Binding var bookmarkList: [String]
     
+    @ViewBuilder
     var body: some View {
-        List {
-            ForEach(bookmarkList, id: \.self) {
-                Text($0)
+        if bookmarkList.count == 0 {
+            Text("즐겨찾기를 등록해 주세요.")
+                .foregroundColor(.gray)
+                .font(.system(size: 20))
+                .fontWeight(.medium)
+        } else {
+            List {
+                ForEach(bookmarkList, id: \.self) {
+                    Text($0)
+                }
+                .onDelete(perform: delete)
             }
-            .onDelete(perform: delete)
+            .listStyle(InsetGroupedListStyle())
         }
-        .listStyle(InsetGroupedListStyle())
     }
     
     private func delete(at offsets: IndexSet) {
