@@ -12,6 +12,7 @@ struct NNSettingView: View {
     @State private var soundsToggle = UserDefaults.standard.bool(forKey: "sounds")
     @State private var markersToggle = UserDefaults.standard.bool(forKey: "markers")
     @State private var stepperAmount = UserDefaults.standard.integer(forKey: "area")
+    @Binding var goIndex: Int
     
     var body: some View {
         List {
@@ -57,6 +58,6 @@ struct NNSettingView: View {
 
 struct NNSettingView_Previews: PreviewProvider {
     static var previews: some View {
-        NNSettingView()
+        NNSettingView(goIndex: .constant(2))
     }
 }

@@ -8,25 +8,28 @@
 import SwiftUI
 
 struct NNTabView: View {
+    @State var selection = 0
+    
     var body: some View {
-        TabView {
-            NNMapView()
+        TabView(selection: $selection) {
+            
+            NNMapView(goIndex: $selection)
                 .tabItem {
                     Image(systemName: "map.fill")
                     Text("Map")
-                }
+                }.tag(0)
             
-            NNBookMarkView()
+            NNBookMarkView(goIndex: $selection)
                 .tabItem {
                     Image(systemName: "bookmark")
                     Text("BookMark")
-                }
+                }.tag(1)
             
-            NNSettingView()
+            NNSettingView(goIndex: $selection)
                 .tabItem {
                     Image(systemName: "gear")
                     Text("Setting")
-                }
+                }.tag(2)
         }
     }
 }

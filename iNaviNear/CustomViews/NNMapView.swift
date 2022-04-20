@@ -10,15 +10,15 @@ import iNaviMaps
 
 struct NNMapView: View {
     
+    @Binding var goIndex: Int
+    @State private var showingAlert: Bool = false
+    @State private var newDrawingMap: Bool = false
+    
     var mapView: CommonMapView = CommonMapView()
     var clusterManager: INVClusterManager? = nil
     
     // 아이나비 맵뷰에서 마커 -> 정보창을 클릭했을 때, 북마크 등록을 위해 이벤트를 감지해주는 notification.
     let markerInfoWindowEvent = NotificationCenter.default.publisher(for: NSNotification.Name.markerInfoWindowEvent)
-    
-    @State private var showingAlert: Bool = false
-    @State private var newDrawingMap: Bool = false
-    
     
     var body: some View {
         
@@ -37,9 +37,19 @@ struct NNMapView: View {
             }),
                   secondaryButton: .default(Text("등록"), action: {
                 // some Action
+                print("go")
+
+                withAnimation {
+                    self.goIndex = 1
+                }
+                
             }))
         }
-        .onReceive(markerInfoWindowEvent) { _ in
+        .onReceive(markerInfoWindowEvent) { postData in
+            let marker = postData.object as! INVMarker
+            let path = Bundle.main.path(forResource: "MyBookMark", ofType: "plist")!
+            let dic = NSDictionary(contentsOfFile: path)!
+            //print(dic)
             showingAlert.toggle()
         }
         .onAppear(perform: {
@@ -47,15 +57,10 @@ struct NNMapView: View {
             ShapeObjectsBundle.shared.drawMapShapeObjects(mapView: mapView.mapInstance)
         })
     }
-    
-    init() {
-        ShapeObjectsBundle.shared.drawMapShapeObjects(mapView: mapView.mapInstance)
-        clusterManager = INVClusterManager.init(mapView: mapView.mapInstance)
-    }
 }
 
 struct NNMapView_Previews: PreviewProvider {
     static var previews: some View {
-        NNMapView()
+        NNMapView(goIndex: .constant(0))
     }
 }

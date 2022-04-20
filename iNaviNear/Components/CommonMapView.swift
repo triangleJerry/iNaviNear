@@ -27,6 +27,6 @@ struct CommonMapView: UIViewRepresentable {
 
 struct CommonMapView_Previews: PreviewProvider {
     static var previews: some View {
-        NNMapView()
+        CommonMapView()
     }
 }

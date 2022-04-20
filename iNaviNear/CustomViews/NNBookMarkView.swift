@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct NNBookMarkView: View {
+    
+    @Binding var goIndex: Int
+    
     var body: some View {
         List {
             Text("bookmark 1")
@@ -22,6 +25,6 @@ struct NNBookMarkView: View {
 
 struct NNBookMarkView_Previews: PreviewProvider {
     static var previews: some View {
-        NNBookMarkView()
+        NNBookMarkView(goIndex: .constant(1))
     }
 }
