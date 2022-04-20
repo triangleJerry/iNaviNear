@@ -12,6 +12,7 @@ import SwiftUI
 extension String {
 
   func CGFloatValue() -> CGFloat? {
+      
     guard let doubleValue = Double(self) else {
       return nil
     }
@@ -30,13 +31,15 @@ extension View {
     func toast(message: String,
                isShowing: Binding<Bool>,
                config: Toast.Config) -> some View {
-        self.modifier(Toast(message: message, isShowing: isShowing, config: config))
+        
+        self.modifier(Toast(message: message, config: config, isShowing: isShowing))
     }
     
     func toast(message: String,
                isShowing: Binding<Bool>,
                duration: TimeInterval) -> some View {
-        self.modifier(Toast(message: message, isShowing: isShowing, config: .init(duration: duration)))
+        
+        self.modifier(Toast(message: message, config: .init(duration: duration), isShowing: isShowing))
     }
     
     @ViewBuilder

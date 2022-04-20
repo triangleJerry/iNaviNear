@@ -30,6 +30,7 @@ class SearchingArea {
     }
     
     static func searchShortestDistance(trkArray: [TrkData], marker: INVMarker) -> TrkData? {
+        
         var length = UserDefaults.standard.integer(forKey: "area")
         var returnTrk: TrkData? = nil
         

@@ -13,7 +13,6 @@ class ShapeUtils {
     
     // MARK: iNaviMaps Shape Objects func.
     
-    
     // 아이나비 지도 위에 루트를 그려주기 위해 객체 INVRoute를 만들어 반환해 주는 메소드.
     static func shapeINVRoutes(trkDataArray: [TrkData], mapView: InaviMapView) {
         
@@ -55,6 +54,7 @@ class ShapeUtils {
     static func shapeINVMarkers(mapView: InaviMapView, markerArray: [INVMarker]) {
         
         for marker in markerArray.enumerated() {
+            
             if UserDefaults.standard.bool(forKey: "markers") == false
                 && marker.element.iconImage == INV_MARKER_IMAGE_GRAY {
                 continue

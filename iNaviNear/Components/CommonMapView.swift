@@ -16,10 +16,12 @@ struct CommonMapView: UIViewRepresentable {
     }
     
     func makeUIView(context: Context) -> InaviMapView {
+        
         return mapInstance
     }
     
     init() {
+        
         mapInstance.showLocationButton = true // 현위치 버튼 표출
         mapInstance.showZoomControl = true // 줌 컨트롤러를 표출
     }

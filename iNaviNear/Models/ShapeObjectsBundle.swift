@@ -35,6 +35,7 @@ class ShapeObjectsBundle {
         
         var INVcircleArray: [INVCircle] = []
         for (index, trk) in trkArray.enumerated() {
+            
             if index % 100 == 0 {
                 let circle = INVCircle()
                 circle.center = trk.location
@@ -56,10 +57,9 @@ class ShapeObjectsBundle {
         
         var _distanceDictionary: [INVMarker:TrkData]  = [:]
         for (_, marker) in markerArray.enumerated() {
+            
             let result = SearchingArea.searchShortestDistance(trkArray: trkArray, marker: marker)
-            guard result != nil else {
-                continue
-            }
+            guard result != nil else { continue }
             _distanceDictionary[marker] = result
         }
 
@@ -72,6 +72,7 @@ class ShapeObjectsBundle {
         var _polylineArray: [INVPolyline] = []
 
         for trkAndMarker in distanceDictionary {
+            
             let coords = [
                 INVLatLng(lat: trkAndMarker.key.position.lat, lng: trkAndMarker.key.position.lng),
                 INVLatLng(lat: trkAndMarker.value.location.lat, lng: trkAndMarker.value.location.lng)
@@ -92,6 +93,7 @@ class ShapeObjectsBundle {
         var INVMarkerArray: [INVMarker] = []
         
         for item in CafeDataArray.enumerated() {
+            
             let marker = INVMarker()
             
             // 마커 커스텀
@@ -103,6 +105,7 @@ class ShapeObjectsBundle {
             marker.iconImage = INV_MARKER_IMAGE_GRAY
             
             marker.touchEvent = { (shape) in
+                
                 HapticManager.instance.impact(style: .medium)
                 if marker.infoWindow != nil {
                     // 정보 창이 마커 위에 표출되고 있는 경우

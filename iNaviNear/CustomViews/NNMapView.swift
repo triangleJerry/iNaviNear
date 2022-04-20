@@ -12,6 +12,7 @@ struct NNMapView: View {
     
     @Binding var goIndex: Int
     @Binding var bookmarkList: [String]
+    
     @State private var showingAlert: Bool = false
     @State private var newDrawingMap: Bool = false
     @State private var showToast: Bool = false
@@ -34,28 +35,26 @@ struct NNMapView: View {
                 .padding(EdgeInsets(top: 0, leading: 0, bottom: 40, trailing: 40))
         }
         .onReceive(markerInfoWindowEvent) { postData in
+            
             let marker = postData.object as! INVMarker
             notiMarkerTitle = marker.title
             
             showingAlert.toggle()
         }
         .alert(isPresented: $showingAlert) {
+            
             Alert(title: Text("카페를 북마크에 등록하시겠습니까?"),
                   message: Text("북마크에 등록을 통해, 손쉽게 지도에서 해당 카페를 찾을 수 있습니다"),
                   primaryButton: .cancel(Text("취소"), action: {
                 //some Action
                 
-                // FileManager 인스턴스 생성
-                let fileManager: FileManager = FileManager.default
-                // 사용자의 문서 경로
-                let documentPath: URL = fileManager.urls(for: .documentDirectory, in: .userDomainMask)[0]
-                print(documentPath)
             }),
                   secondaryButton: .default(Text("등록"), action: {
                 // some Action
                 
                 let check = bookmarkList.contains(notiMarkerTitle)
                 if check { // 해당 마커(카페)가 이미 즐겨찾기에 등록이 되어 있는 상태
+                    
                     toastMessage = "이미 등록된 카페입니다."
                 } else {
                     
@@ -68,6 +67,7 @@ struct NNMapView: View {
             }))
         }
         .onAppear(perform: {
+            
             ShapeObjectsBundle.shared.removeAllMapShapeObjects()
             ShapeObjectsBundle.shared.drawMapShapeObjects(mapView: mapView.mapInstance)
         })

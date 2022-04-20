@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct NNTabView: View {
+    
     @State var selection = 0
     @State var bookmarkList = UserDefaults.standard.array(forKey: "bookmark") as! [String]
     

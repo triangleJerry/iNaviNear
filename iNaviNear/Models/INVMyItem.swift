@@ -14,6 +14,7 @@ class INVMyItem: NSObject, INVClusterItem {
     var title: String
     
     init(position: INVLatLng, title: String) {
+        
         self.position = position
         self.title = title
     }

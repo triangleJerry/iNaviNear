@@ -14,9 +14,10 @@ struct Toast: ViewModifier {
     static let long: TimeInterval = 3.5
     
     let message: String
-    @Binding var isShowing: Bool
     let config: Config
     
+    @Binding var isShowing: Bool
+
     func body(content: Content) -> some View {
         ZStack {
             content
@@ -29,6 +30,7 @@ struct Toast: ViewModifier {
             Spacer()
             
             if isShowing {
+    
                 Group {
                     Text(message)
                         .multilineTextAlignment(.center)

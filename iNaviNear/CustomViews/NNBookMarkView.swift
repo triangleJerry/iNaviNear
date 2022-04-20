@@ -15,11 +15,13 @@ struct NNBookMarkView: View {
     @ViewBuilder
     var body: some View {
         if bookmarkList.count == 0 {
+            
             Text("즐겨찾기를 등록해 주세요.")
                 .foregroundColor(.gray)
                 .font(.system(size: 20))
                 .fontWeight(.medium)
         } else {
+            
             List {
                 ForEach(bookmarkList, id: \.self) {
                     Text($0)
@@ -31,6 +33,7 @@ struct NNBookMarkView: View {
     }
     
     private func delete(at offsets: IndexSet) {
+        
         bookmarkList.remove(atOffsets: offsets)
         UserDefaults.standard.set(bookmarkList, forKey: "bookmark")
     }

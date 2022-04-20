@@ -13,6 +13,7 @@ struct SelfPositionButton: View {
     
     var body: some View {
         Button(action: {
+            
             HapticManager.instance.impact(style: .heavy)
             moveLakePosition(mapView: mapView)
         }) {
@@ -26,6 +27,7 @@ struct SelfPositionButton: View {
         .background(Color.white)
         .cornerRadius(15)
         .onTapGesture {
+            
             let impactHeavy = UIImpactFeedbackGenerator(style: .heavy)
             impactHeavy.impactOccurred()
         }

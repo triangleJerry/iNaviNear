@@ -29,10 +29,12 @@ class GPXParser: NSObject, XMLParserDelegate {
         parser.delegate = self
         let success = parser.parse()
         if success {
+            
             print("gpx file parsing is done.")
             return TrkDataArray
         }
         else {
+            
             print(parser.parserError.debugDescription)
         }
         return nil
@@ -44,10 +46,12 @@ class GPXParser: NSObject, XMLParserDelegate {
         parser.delegate = self
         let success = parser.parse()
         if success {
+            
             print("gpx file parsing is done.")
             return CafeDataArray
         }
         else {
+            
             print(parser.parserError.debugDescription)
         }
         return nil
@@ -114,15 +118,4 @@ class GPXParser: NSObject, XMLParserDelegate {
         
         foundCharacters = ""
     }
-    
-//    func parserDidEndDocument(_ parser: XMLParser) {
-//        
-//        for cafedata in CafeDataDictionary.values {
-//            print(cafedata.name, cafedata.location.lat, cafedata.location.lng)
-//        }
-//
-//        for (item, index) in TrkDataArray.enumerated() {
-//            print(item, index)
-//        }
-//    }
 }
