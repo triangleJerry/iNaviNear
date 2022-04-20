@@ -70,7 +70,7 @@ class ShapeObjectsBundle {
     private func getINVPolylineArray() -> [INVPolyline] {
         
         var _polylineArray: [INVPolyline] = []
-        var num = 0
+
         for trkAndMarker in distanceDictionary {
             let coords = [
                 INVLatLng(lat: trkAndMarker.key.position.lat, lng: trkAndMarker.key.position.lng),
@@ -119,7 +119,7 @@ class ShapeObjectsBundle {
                     // 즐겨찾기를 등록할지의 여부를 묻는 Alert 팝업.
                     infoWindow.touchEvent = { (shape) in
                         HapticManager.instance.impact(style: .medium)
-                        NotificationCenter.default.post(name: Notification.Name.markerInfoWindowEvent, object: nil)
+                        NotificationCenter.default.post(name: Notification.Name.markerInfoWindowEvent, object: marker)
                         return true
                     }
                     infoWindow.marker = marker

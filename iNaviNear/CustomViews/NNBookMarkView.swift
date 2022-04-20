@@ -10,21 +10,30 @@ import SwiftUI
 struct NNBookMarkView: View {
     
     @Binding var goIndex: Int
+    @Binding var bookmarkList: [String]
     
     var body: some View {
         List {
-            Text("bookmark 1")
-            Text("bookmark 2")
-            Text("bookmark 3")
-            Text("bookmark 4")
-            Text("bookmark 5")
+            ForEach(bookmarkList, id: \.self) {
+                Text($0)
+            }
+            .onDelete(perform: delete)
         }
         .listStyle(InsetGroupedListStyle())
+    }
+    
+    private func delete(at offsets: IndexSet) {
+        bookmarkList.remove(atOffsets: offsets)
+        UserDefaults.standard.set(bookmarkList, forKey: "bookmark")
     }
 }
 
 struct NNBookMarkView_Previews: PreviewProvider {
     static var previews: some View {
-        NNBookMarkView(goIndex: .constant(1))
+        NNBookMarkView(goIndex: .constant(1), bookmarkList: .constant([""]))
     }
 }
+
+//                withAnimation {
+//                    self.goIndex = 1
+//                }

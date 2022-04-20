@@ -20,7 +20,8 @@ struct iNaviNearApp: App {
             defaults: [
                 "sounds": true,
                 "markers": true,
-                "area": 100
+                "area": 100,
+                "bookmark": [String]()
             ]
         )
     }

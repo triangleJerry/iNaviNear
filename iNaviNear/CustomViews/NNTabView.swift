@@ -9,17 +9,18 @@ import SwiftUI
 
 struct NNTabView: View {
     @State var selection = 0
+    @State var bookmarkList = UserDefaults.standard.array(forKey: "bookmark") as! [String]
     
     var body: some View {
         TabView(selection: $selection) {
             
-            NNMapView(goIndex: $selection)
+            NNMapView(goIndex: $selection, bookmarkList: $bookmarkList)
                 .tabItem {
                     Image(systemName: "map.fill")
                     Text("Map")
                 }.tag(0)
             
-            NNBookMarkView(goIndex: $selection)
+            NNBookMarkView(goIndex: $selection, bookmarkList: $bookmarkList)
                 .tabItem {
                     Image(systemName: "bookmark")
                     Text("BookMark")
