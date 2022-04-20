@@ -7,6 +7,7 @@
 
 import Foundation
 import UIKit
+import SwiftUI
 
 extension String {
 
@@ -20,5 +21,21 @@ extension String {
 }
 
 extension Notification.Name {
+    
     static let markerInfoWindowEvent = Notification.Name("markerInfoWindowEvent")
+}
+
+extension View {
+    
+    func toast(message: String,
+               isShowing: Binding<Bool>,
+               config: Toast.Config) -> some View {
+        self.modifier(Toast(message: message, isShowing: isShowing, config: config))
+    }
+    
+    func toast(message: String,
+               isShowing: Binding<Bool>,
+               duration: TimeInterval) -> some View {
+        self.modifier(Toast(message: message, isShowing: isShowing, config: .init(duration: duration)))
+    }
 }
