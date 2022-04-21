@@ -10,5 +10,5 @@ import iNaviMaps
 
 protocol GPXDataProtocol {
     
-    var location: INVLatLng { get } // 위치 정보
+    var location: INVLatLng { get set } // 위치 정보
 }

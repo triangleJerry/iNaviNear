@@ -51,8 +51,7 @@ class ShapeObjectsBundle {
         return INVcircleArray
     }
     
-    
-    // 최단거리 표시를 위한 INVPolyline 객체들을 일괄적으로 만들어 받아오는 메소드.
+    // 주행경로 <-> 마커 사이의 최단거리 확보를 위한 쌍을 일괄적으로 만들어 오는 메소드.
     private func getLineDictionary() -> [INVMarker:TrkData] {
         
         var _distanceDictionary: [INVMarker:TrkData]  = [:]
@@ -66,7 +65,7 @@ class ShapeObjectsBundle {
         return _distanceDictionary
     }
     
-    // 주행경로 <-> 마커 사이의 최단거리 확보를 위한 쌍을 일괄적으로 만들어 오는 메소드.
+    // 최단거리 표시를 위한 INVPolyline 객체들을 일괄적으로 만들어 받아오는 메소드.
     private func getINVPolylineArray() -> [INVPolyline] {
         
         var _polylineArray: [INVPolyline] = []
