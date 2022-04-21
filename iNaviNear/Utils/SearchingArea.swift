@@ -22,7 +22,7 @@ class SearchingArea {
             
             // 범위에 포함되어 있는 마커라면 파란색으로, 벗어난 마커라면 회색으로.
             if UserDefaults.standard.integer(forKey: "area") >= Int(distanceInMeters) {
-                print(String(format: "The distance to my buddy is \(distanceInMeters)m \(marker.title)"))
+                //print(String(format: "The distance to my buddy is \(distanceInMeters)m \(marker.title)"))
                 return INV_MARKER_IMAGE_BLUE
             }
         }
@@ -42,7 +42,7 @@ class SearchingArea {
             let distanceInMeters = trkPoint.distance(from: markerLocation) // result is in meters
             
             if length >= Int(distanceInMeters) {
-                print(String(format: "The distance to my buddy is \(distanceInMeters)m \(marker.title)"))
+                //print(String(format: "The distance to my buddy is \(distanceInMeters)m \(marker.title)"))
                 length = Int(distanceInMeters)
                 returnTrk = trk.element
             }

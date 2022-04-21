@@ -34,6 +34,10 @@ struct NNTabView: View {
                 }.tag(2)
         }
     }
+    
+    init() {
+        UITabBar.appearance().backgroundColor = .white
+    }
 }
 
 struct NNTabView_Previews: PreviewProvider {

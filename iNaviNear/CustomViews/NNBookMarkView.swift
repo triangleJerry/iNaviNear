@@ -12,16 +12,17 @@ struct NNBookMarkView: View {
     @Binding var goIndex: Int
     @Binding var bookmarkList: [String]
     
-    @ViewBuilder
+    // bookmarkList.count를 통해 직접적으로 참조해 뷰를 전환하게 되면 삭제 이후 Binding을 통해 객체가 바뀔 때, 앱이 크래시 되기 때문에 간접적으로 참조한다.
+    @State private var bookmarkCount: Int = 0
+    
     var body: some View {
-        if bookmarkList.count == 0 {
-            
-            Text("즐겨찾기를 등록해 주세요.")
-                .foregroundColor(.gray)
-                .font(.system(size: 20))
-                .fontWeight(.medium)
-        } else {
-            NavigationView { // onMove를 사용하기 위해서는 List를 NavigationView가 감싸줘야 한다.
+        NavigationView { // onMove를 사용하기 위해서는 List를 NavigationView가 감싸줘야 한다.
+            if bookmarkCount == 0 {
+                Text("즐겨찾기를 등록해 주세요.")
+                    .foregroundColor(.gray)
+                    .font(.system(size: 20))
+                    .fontWeight(.medium)
+            } else {
                 List {
                     ForEach(bookmarkList, id: \.self) { bookmark in
                         Text(bookmark)
@@ -41,13 +42,17 @@ struct NNBookMarkView: View {
                 .listStyle(InsetGroupedListStyle())
                 .toolbar { EditButton() }
             }
-            .navigationBarItems(trailing: EditButton())
+        }
+        .navigationBarItems(trailing: EditButton())
+        .onAppear() {
+            bookmarkCount = bookmarkList.count
         }
     }
     
     private func delete(at offsets: IndexSet) {
         
         bookmarkList.remove(atOffsets: offsets)
+        bookmarkCount -= 1
         UserDefaults.standard.set(bookmarkList, forKey: "bookmark")
     }
     
