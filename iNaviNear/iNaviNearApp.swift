@@ -18,7 +18,7 @@ struct iNaviNearApp: App {
         let userDefaults = UserDefaults.standard
         userDefaults.register(
             defaults: [
-                "sounds": true,
+                "haptic": true,
                 "markers": true,
                 "area": 100,
                 "bookmark": [String]()

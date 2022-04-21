@@ -20,7 +20,10 @@ class HapticManager {
     
     func impact(style: UIImpactFeedbackGenerator.FeedbackStyle) {
         
-        let generator = UIImpactFeedbackGenerator(style: style)
-        generator.impactOccurred()
+        let haptic =  UserDefaults.standard.bool(forKey: "haptic")
+        if haptic {
+            let generator = UIImpactFeedbackGenerator(style: style)
+            generator.impactOccurred()
+        }
     }
 }

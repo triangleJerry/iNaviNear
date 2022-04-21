@@ -9,7 +9,7 @@ import SwiftUI
 
 struct NNSettingView: View {
     
-    @State private var soundsToggle = UserDefaults.standard.bool(forKey: "sounds")
+    @State private var hapticToggle = UserDefaults.standard.bool(forKey: "haptic")
     @State private var markersToggle = UserDefaults.standard.bool(forKey: "markers")
     @State private var stepperAmount = UserDefaults.standard.integer(forKey: "area")
     
@@ -19,16 +19,16 @@ struct NNSettingView: View {
         List {
             Section(header: Text("Options")) {
                 
-                // 효과음
-                Toggle(isOn: $soundsToggle, label: {
+                // 햅틱 진동
+                Toggle(isOn: $hapticToggle, label: {
                     
                     HStack {
-                        Image(systemName: "bell")
-                        Text("Sounds")
+                        Image(systemName: "iphone.radiowaves.left.and.right")
+                        Text("Haptic")
                     }
-                }).onChange(of: soundsToggle) { value in
+                }).onChange(of: hapticToggle) { value in
                     
-                    UserDefaults.standard.set(self.soundsToggle, forKey: "sounds")
+                    UserDefaults.standard.set(self.hapticToggle, forKey: "haptic")
                 }
                 
                 // 카페 탐색 범위
