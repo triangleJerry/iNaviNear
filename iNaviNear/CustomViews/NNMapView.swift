@@ -95,6 +95,7 @@ struct NNMapView: View {
                 cameraUpdate.animationDuration = 1.5
                 mapView.mapInstance.moveCamera(cameraUpdate)
                 DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1.6) {
+                    
                     toastMessage = "\(markerTitle)로 이동했습니다."
                     showToast.toggle()
                 }
