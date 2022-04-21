@@ -77,24 +77,27 @@ struct NNMapView: View {
             ShapeObjectsBundle.shared.removeAllMapShapeObjects()
             ShapeObjectsBundle.shared.drawMapShapeObjects(mapView: mapView.mapInstance)
         })
+        .onDisappear(perform: {
+          showToast = false
+        })
         .toast(message: toastMessage, isShowing: $showToast, duration: Toast.short)
     }
     
     // 북마크뷰에서 리스트 셀을 클릭했을 때, 맵 뷰 이동 후 카메라를 해당 마커에 맞춰주는 메소드.
     private func focusingBookMarkMarker(markerTitle: String) {
-        // 대상 지점, 줌 레벨을 지정하여 INVCameraPosition 객체 생성
-        // 기울기 각도와 베어링 각도는 0으로 설정된다.
 
         for item in ShapeObjectsBundle.shared.markerArray.enumerated() {
             if item.element.title == markerTitle {
-                let cameraPosition = INVCameraPosition.init(
-                    INVLatLng(lat: item.element.position.lat, lng: item.element.position.lng),
-                    zoom: 16.5)
-                // 카메라의 위치 설정
-                mapView.mapInstance.cameraPosition = cameraPosition
                 
-                toastMessage = "\(markerTitle)로 이동했습니다."
-                showToast.toggle()
+                let cameraUpdate = INVCameraUpdate.init(
+                    targetTo: INVLatLng(lat: item.element.position.lat, lng: item.element.position.lng), zoomTo: 16.5)
+                cameraUpdate.animation = .fly
+                cameraUpdate.animationDuration = 1.5
+                mapView.mapInstance.moveCamera(cameraUpdate)
+                DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1.6) {
+                    toastMessage = "\(markerTitle)로 이동했습니다."
+                    showToast.toggle()
+                }
             }
         }
     }

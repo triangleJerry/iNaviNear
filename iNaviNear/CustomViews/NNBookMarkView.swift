@@ -26,11 +26,13 @@ struct NNBookMarkView: View {
                     ForEach(bookmarkList, id: \.self) { bookmark in
                         Text(bookmark)
                             .onTapGesture() {
-                                print(bookmark)
+                                HapticManager.instance.impact(style: .medium)
                                 withAnimation {
                                     self.goIndex = 0
                                 }
-                                NotificationCenter.default.post(name: Notification.Name.bookMarkClickEvent, object: bookmark)
+                                DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.5) {
+                                    NotificationCenter.default.post(name: Notification.Name.bookMarkClickEvent, object: bookmark)
+                                }
                             }
                     }
                     .onDelete(perform: delete)
