@@ -21,20 +21,30 @@ struct NNBookMarkView: View {
                 .font(.system(size: 20))
                 .fontWeight(.medium)
         } else {
-            
-            List {
-                ForEach(bookmarkList, id: \.self) {
-                    Text($0)
+            NavigationView { // onMove를 사용하기 위해서는 List를 NavigationView가 감싸줘야 한다.
+                List {
+                    ForEach(bookmarkList, id: \.self) {
+                        Text($0)
+                    }
+                    .onDelete(perform: delete)
+                    .onMove(perform: move)
                 }
-                .onDelete(perform: delete)
+                .listStyle(InsetGroupedListStyle())
+                .toolbar { EditButton() }
             }
-            .listStyle(InsetGroupedListStyle())
+            .navigationBarItems(trailing: EditButton())
         }
     }
     
     private func delete(at offsets: IndexSet) {
         
         bookmarkList.remove(atOffsets: offsets)
+        UserDefaults.standard.set(bookmarkList, forKey: "bookmark")
+    }
+    
+    private func move(from source: IndexSet, to destination: Int) {
+        
+        bookmarkList.move(fromOffsets: source, toOffset: destination)
         UserDefaults.standard.set(bookmarkList, forKey: "bookmark")
     }
 }
