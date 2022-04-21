@@ -24,6 +24,8 @@ struct NNMapView: View {
     
     // 아이나비 맵뷰에서 마커 -> 정보창을 클릭했을 때, 북마크 등록을 위해 이벤트를 감지해주는 notification.
     let markerInfoWindowEvent = NotificationCenter.default.publisher(for: NSNotification.Name.markerInfoWindowEvent)
+    // 북마크뷰에서 리스트 셀을 클릭했을 때, 맵 뷰 이동 후 카메라를 해당 마커에 맞춰주기 위해 이벤트를 감지해주는 notification.
+    let bookMarkClickEvent = NotificationCenter.default.publisher(for: NSNotification.Name.bookMarkClickEvent)
     
     var body: some View {
         
@@ -33,6 +35,10 @@ struct NNMapView: View {
             
             SelfPositionButton(mapView: mapView.mapInstance)
                 .padding(EdgeInsets(top: 0, leading: 0, bottom: 40, trailing: 40))
+        }
+        .onReceive(bookMarkClickEvent) { postData in
+            let markerTitle: String = postData.object as! String
+            self.focusingBookMarkMarker(markerTitle: markerTitle)
         }
         .onReceive(markerInfoWindowEvent) { postData in
             
@@ -72,6 +78,25 @@ struct NNMapView: View {
             ShapeObjectsBundle.shared.drawMapShapeObjects(mapView: mapView.mapInstance)
         })
         .toast(message: toastMessage, isShowing: $showToast, duration: Toast.short)
+    }
+    
+    // 북마크뷰에서 리스트 셀을 클릭했을 때, 맵 뷰 이동 후 카메라를 해당 마커에 맞춰주는 메소드.
+    private func focusingBookMarkMarker(markerTitle: String) {
+        // 대상 지점, 줌 레벨을 지정하여 INVCameraPosition 객체 생성
+        // 기울기 각도와 베어링 각도는 0으로 설정된다.
+
+        for item in ShapeObjectsBundle.shared.markerArray.enumerated() {
+            if item.element.title == markerTitle {
+                let cameraPosition = INVCameraPosition.init(
+                    INVLatLng(lat: item.element.position.lat, lng: item.element.position.lng),
+                    zoom: 16.5)
+                // 카메라의 위치 설정
+                mapView.mapInstance.cameraPosition = cameraPosition
+                
+                toastMessage = "\(markerTitle)로 이동했습니다."
+                showToast.toggle()
+            }
+        }
     }
 }
 

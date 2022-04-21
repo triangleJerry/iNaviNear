@@ -18,7 +18,6 @@
 		0315076D27FEABF100C79C57 /* GPXParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0315076C27FEABF100C79C57 /* GPXParser.swift */; };
 		0315076F27FEABFA00C79C57 /* ShapeUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0315076E27FEABFA00C79C57 /* ShapeUtils.swift */; };
 		032D730F280EBC23004D6250 /* INVMyItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 032D730E280EBC23004D6250 /* INVMyItem.swift */; };
-		033DD091280FA3CC0067B01B /* MyBookMark.plist in Resources */ = {isa = PBXBuildFile; fileRef = 033DD090280FA3CC0067B01B /* MyBookMark.plist */; };
 		033DD095280FC9C50067B01B /* ToastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 033DD094280FC9C50067B01B /* ToastView.swift */; };
 		03407D342807D739005F36FF /* ShapeObjectsBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03407D332807D739005F36FF /* ShapeObjectsBundle.swift */; };
 		034ABDD2280418180016CB41 /* LakeLocation.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 034ABDD1280418180016CB41 /* LakeLocation.gpx */; };
@@ -47,7 +46,6 @@
 		0315076C27FEABF100C79C57 /* GPXParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GPXParser.swift; sourceTree = "<group>"; };
 		0315076E27FEABFA00C79C57 /* ShapeUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShapeUtils.swift; sourceTree = "<group>"; };
 		032D730E280EBC23004D6250 /* INVMyItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = INVMyItem.swift; sourceTree = "<group>"; };
-		033DD090280FA3CC0067B01B /* MyBookMark.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = MyBookMark.plist; sourceTree = "<group>"; };
 		033DD094280FC9C50067B01B /* ToastView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastView.swift; sourceTree = "<group>"; };
 		03407D332807D739005F36FF /* ShapeObjectsBundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShapeObjectsBundle.swift; sourceTree = "<group>"; };
 		034ABDD1280418180016CB41 /* LakeLocation.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = LakeLocation.gpx; sourceTree = "<group>"; };
@@ -86,6 +84,7 @@
 				0315076A27FEABE700C79C57 /* Extensions.swift */,
 				0315076C27FEABF100C79C57 /* GPXParser.swift */,
 				0315076E27FEABFA00C79C57 /* ShapeUtils.swift */,
+				037212122805202800CD7CA2 /* SearchingArea.swift */,
 				038012BF27FEC31900DFB28D /* PreViewDev.swift */,
 				03721214280549B700CD7CA2 /* HapticManager.swift */,
 			);
@@ -98,7 +97,6 @@
 				03A885BB28094A7600A15F10 /* GPXDataProtocol.swift */,
 				0315076427FEABBF00C79C57 /* CafeData.swift */,
 				0315076627FEABC600C79C57 /* TrkData.swift */,
-				037212122805202800CD7CA2 /* SearchingArea.swift */,
 				03407D332807D739005F36FF /* ShapeObjectsBundle.swift */,
 				032D730E280EBC23004D6250 /* INVMyItem.swift */,
 			);
@@ -110,7 +108,6 @@
 			children = (
 				034ABDD1280418180016CB41 /* LakeLocation.gpx */,
 				034ABDD32804183F0016CB41 /* CafeLocation.gpx */,
-				033DD090280FA3CC0067B01B /* MyBookMark.plist */,
 			);
 			path = Files;
 			sourceTree = "<group>";
@@ -258,7 +255,6 @@
 				034ABDD42804183F0016CB41 /* CafeLocation.gpx in Resources */,
 				A157004427FA93BF00DE498F /* Preview Assets.xcassets in Resources */,
 				A157004127FA93BF00DE498F /* Assets.xcassets in Resources */,
-				033DD091280FA3CC0067B01B /* MyBookMark.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

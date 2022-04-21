@@ -24,6 +24,8 @@ extension String {
 extension Notification.Name {
     
     static let markerInfoWindowEvent = Notification.Name("markerInfoWindowEvent")
+    
+    static let bookMarkClickEvent = Notification.Name("bookMarkClickEvent")
 }
 
 extension View {

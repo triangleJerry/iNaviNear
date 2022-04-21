@@ -23,8 +23,15 @@ struct NNBookMarkView: View {
         } else {
             NavigationView { // onMove를 사용하기 위해서는 List를 NavigationView가 감싸줘야 한다.
                 List {
-                    ForEach(bookmarkList, id: \.self) {
-                        Text($0)
+                    ForEach(bookmarkList, id: \.self) { bookmark in
+                        Text(bookmark)
+                            .onTapGesture() {
+                                print(bookmark)
+                                withAnimation {
+                                    self.goIndex = 0
+                                }
+                                NotificationCenter.default.post(name: Notification.Name.bookMarkClickEvent, object: bookmark)
+                            }
                     }
                     .onDelete(perform: delete)
                     .onMove(perform: move)
@@ -54,7 +61,3 @@ struct NNBookMarkView_Previews: PreviewProvider {
         NNBookMarkView(goIndex: .constant(1), bookmarkList: .constant([""]))
     }
 }
-
-//                withAnimation {
-//                    self.goIndex = 1
-//                }
