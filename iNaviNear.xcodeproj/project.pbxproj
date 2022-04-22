@@ -28,6 +28,9 @@
 		03721215280549B700CD7CA2 /* HapticManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03721214280549B700CD7CA2 /* HapticManager.swift */; };
 		038012C027FEC31900DFB28D /* PreViewDev.swift in Sources */ = {isa = PBXBuildFile; fileRef = 038012BF27FEC31900DFB28D /* PreViewDev.swift */; };
 		03A885BC28094A7600A15F10 /* GPXDataProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A885BB28094A7600A15F10 /* GPXDataProtocol.swift */; };
+		03E5120428124CE2003310A6 /* NNIntroView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03E5120328124CE2003310A6 /* NNIntroView.swift */; };
+		03E5120628124DA9003310A6 /* LottieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03E5120528124DA9003310A6 /* LottieView.swift */; };
+		03E51208281251A8003310A6 /* lottie_Intro.json in Resources */ = {isa = PBXBuildFile; fileRef = 03E51207281251A8003310A6 /* lottie_Intro.json */; };
 		6380A2198F256ED45E10F568 /* Pods_iNaviNear.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C6F557E24ABEAE05B0BB4268 /* Pods_iNaviNear.framework */; };
 		A157003D27FA93BD00DE498F /* iNaviNearApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A157003C27FA93BD00DE498F /* iNaviNearApp.swift */; };
 		A157004127FA93BF00DE498F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A157004027FA93BF00DE498F /* Assets.xcassets */; };
@@ -56,6 +59,9 @@
 		03721214280549B700CD7CA2 /* HapticManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticManager.swift; sourceTree = "<group>"; };
 		038012BF27FEC31900DFB28D /* PreViewDev.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreViewDev.swift; sourceTree = "<group>"; };
 		03A885BB28094A7600A15F10 /* GPXDataProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GPXDataProtocol.swift; sourceTree = "<group>"; };
+		03E5120328124CE2003310A6 /* NNIntroView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NNIntroView.swift; sourceTree = "<group>"; };
+		03E5120528124DA9003310A6 /* LottieView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottieView.swift; sourceTree = "<group>"; };
+		03E51207281251A8003310A6 /* lottie_Intro.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = lottie_Intro.json; sourceTree = "<group>"; };
 		656074E3D65CADF7BB25020D /* Pods-iNaviNear.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iNaviNear.debug.xcconfig"; path = "Target Support Files/Pods-iNaviNear/Pods-iNaviNear.debug.xcconfig"; sourceTree = "<group>"; };
 		A157003927FA93BD00DE498F /* iNaviNear.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iNaviNear.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A157003C27FA93BD00DE498F /* iNaviNearApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iNaviNearApp.swift; sourceTree = "<group>"; };
@@ -106,6 +112,7 @@
 		0315075627FEAB3000C79C57 /* Files */ = {
 			isa = PBXGroup;
 			children = (
+				03E51207281251A8003310A6 /* lottie_Intro.json */,
 				034ABDD1280418180016CB41 /* LakeLocation.gpx */,
 				034ABDD32804183F0016CB41 /* CafeLocation.gpx */,
 			);
@@ -117,6 +124,7 @@
 			children = (
 				034ABDD5280419280016CB41 /* CommonMapView.swift */,
 				034ABDD728041BC20016CB41 /* SelfPositionButton.swift */,
+				03E5120528124DA9003310A6 /* LottieView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -128,6 +136,7 @@
 				0315075C27FEAB6D00C79C57 /* NNMapView.swift */,
 				0315075E27FEAB8000C79C57 /* NNBookMarkView.swift */,
 				0315076027FEAB8A00C79C57 /* NNSettingView.swift */,
+				03E5120328124CE2003310A6 /* NNIntroView.swift */,
 				033DD094280FC9C50067B01B /* ToastView.swift */,
 			);
 			path = CustomViews;
@@ -209,6 +218,8 @@
 			dependencies = (
 			);
 			name = iNaviNear;
+			packageProductDependencies = (
+			);
 			productName = iNaviNear;
 			productReference = A157003927FA93BD00DE498F /* iNaviNear.app */;
 			productType = "com.apple.product-type.application";
@@ -237,6 +248,8 @@
 				Base,
 			);
 			mainGroup = A157003027FA93BC00DE498F;
+			packageReferences = (
+			);
 			productRefGroup = A157003A27FA93BD00DE498F /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -251,6 +264,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				03E51208281251A8003310A6 /* lottie_Intro.json in Resources */,
 				034ABDD2280418180016CB41 /* LakeLocation.gpx in Resources */,
 				034ABDD42804183F0016CB41 /* CafeLocation.gpx in Resources */,
 				A157004427FA93BF00DE498F /* Preview Assets.xcassets in Resources */,
@@ -316,6 +330,7 @@
 				03721215280549B700CD7CA2 /* HapticManager.swift in Sources */,
 				0315076127FEAB8A00C79C57 /* NNSettingView.swift in Sources */,
 				0315076F27FEABFA00C79C57 /* ShapeUtils.swift in Sources */,
+				03E5120628124DA9003310A6 /* LottieView.swift in Sources */,
 				034ABDD6280419280016CB41 /* CommonMapView.swift in Sources */,
 				0315076B27FEABE700C79C57 /* Extensions.swift in Sources */,
 				038012C027FEC31900DFB28D /* PreViewDev.swift in Sources */,
@@ -327,6 +342,7 @@
 				037212132805202800CD7CA2 /* SearchingArea.swift in Sources */,
 				0315076D27FEABF100C79C57 /* GPXParser.swift in Sources */,
 				034ABDD828041BC20016CB41 /* SelfPositionButton.swift in Sources */,
+				03E5120428124CE2003310A6 /* NNIntroView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

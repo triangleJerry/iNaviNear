@@ -7,5 +7,6 @@ target 'iNaviNear' do
 
   # Pods for iNaviNear
   pod 'inavi-maps-sdk'
+  pod 'lottie-ios'
 
 end
