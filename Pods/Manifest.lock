@@ -1,16 +1,20 @@
 PODS:
   - inavi-maps-sdk (0.7.0)
+  - lottie-ios (3.3.0)
 
 DEPENDENCIES:
   - inavi-maps-sdk
+  - lottie-ios
 
 SPEC REPOS:
   trunk:
     - inavi-maps-sdk
+    - lottie-ios
 
 SPEC CHECKSUMS:
   inavi-maps-sdk: ba25ef2b6d08bb104329416a57c609965dedb85e
+  lottie-ios: 6ac74dcc09904798f59b18cb3075c089d76be9ae
 
-PODFILE CHECKSUM: 9d3f415596aac5c4d25ad6764cead6ed21bf3246
+PODFILE CHECKSUM: 26c1d5db07837b821860e7125e776693436b023c
 
-COCOAPODS: 1.11.2
+COCOAPODS: 1.11.3
