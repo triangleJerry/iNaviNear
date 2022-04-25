@@ -34,7 +34,7 @@ struct NNMapView: View {
                 .edgesIgnoringSafeArea([.top]) // 상단 노치부분까지 지도가 덮을 수 있도록
             
             SelfPositionButton(mapView: mapView.mapInstance)
-                .padding(EdgeInsets(top: 0, leading: 0, bottom: 40, trailing: 40))
+                .padding(EdgeInsets(top: 0, leading: 0, bottom: 190, trailing: 10))
         }
         .onReceive(bookMarkClickEvent) { postData in
             let markerTitle: String = postData.object as! String
@@ -93,11 +93,13 @@ struct NNMapView: View {
                     targetTo: INVLatLng(lat: item.element.position.lat, lng: item.element.position.lng), zoomTo: 16.5)
                 cameraUpdate.animation = .fly
                 cameraUpdate.animationDuration = 1.5
-                mapView.mapInstance.moveCamera(cameraUpdate)
-                DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1.6) {
-                    
-                    toastMessage = "\(markerTitle)로 이동했습니다."
-                    showToast.toggle()
+                mapView.mapInstance.moveCamera(cameraUpdate) { (isCanelled) in
+                    if isCanelled { // 카메라 이동 취소
+                        
+                    } else { // 카메라 이동 완료
+                        toastMessage = "\(markerTitle)로 이동했습니다."
+                        showToast.toggle()
+                    }
                 }
             }
         }

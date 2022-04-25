@@ -30,7 +30,7 @@
 		03A885BC28094A7600A15F10 /* GPXDataProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A885BB28094A7600A15F10 /* GPXDataProtocol.swift */; };
 		03E5120428124CE2003310A6 /* NNIntroView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03E5120328124CE2003310A6 /* NNIntroView.swift */; };
 		03E5120628124DA9003310A6 /* LottieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03E5120528124DA9003310A6 /* LottieView.swift */; };
-		03E51208281251A8003310A6 /* lottie_Intro.json in Resources */ = {isa = PBXBuildFile; fileRef = 03E51207281251A8003310A6 /* lottie_Intro.json */; };
+		03E5120C28129ECE003310A6 /* lottie_Intro.json in Resources */ = {isa = PBXBuildFile; fileRef = 03E5120B28129ECE003310A6 /* lottie_Intro.json */; };
 		6380A2198F256ED45E10F568 /* Pods_iNaviNear.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C6F557E24ABEAE05B0BB4268 /* Pods_iNaviNear.framework */; };
 		A157003D27FA93BD00DE498F /* iNaviNearApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A157003C27FA93BD00DE498F /* iNaviNearApp.swift */; };
 		A157004127FA93BF00DE498F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A157004027FA93BF00DE498F /* Assets.xcassets */; };
@@ -61,7 +61,7 @@
 		03A885BB28094A7600A15F10 /* GPXDataProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GPXDataProtocol.swift; sourceTree = "<group>"; };
 		03E5120328124CE2003310A6 /* NNIntroView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NNIntroView.swift; sourceTree = "<group>"; };
 		03E5120528124DA9003310A6 /* LottieView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottieView.swift; sourceTree = "<group>"; };
-		03E51207281251A8003310A6 /* lottie_Intro.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = lottie_Intro.json; sourceTree = "<group>"; };
+		03E5120B28129ECE003310A6 /* lottie_Intro.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = lottie_Intro.json; sourceTree = "<group>"; };
 		656074E3D65CADF7BB25020D /* Pods-iNaviNear.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iNaviNear.debug.xcconfig"; path = "Target Support Files/Pods-iNaviNear/Pods-iNaviNear.debug.xcconfig"; sourceTree = "<group>"; };
 		A157003927FA93BD00DE498F /* iNaviNear.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iNaviNear.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A157003C27FA93BD00DE498F /* iNaviNearApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iNaviNearApp.swift; sourceTree = "<group>"; };
@@ -112,7 +112,7 @@
 		0315075627FEAB3000C79C57 /* Files */ = {
 			isa = PBXGroup;
 			children = (
-				03E51207281251A8003310A6 /* lottie_Intro.json */,
+				03E5120B28129ECE003310A6 /* lottie_Intro.json */,
 				034ABDD1280418180016CB41 /* LakeLocation.gpx */,
 				034ABDD32804183F0016CB41 /* CafeLocation.gpx */,
 			);
@@ -264,7 +264,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				03E51208281251A8003310A6 /* lottie_Intro.json in Resources */,
+				03E5120C28129ECE003310A6 /* lottie_Intro.json in Resources */,
 				034ABDD2280418180016CB41 /* LakeLocation.gpx in Resources */,
 				034ABDD42804183F0016CB41 /* CafeLocation.gpx in Resources */,
 				A157004427FA93BF00DE498F /* Preview Assets.xcassets in Resources */,
