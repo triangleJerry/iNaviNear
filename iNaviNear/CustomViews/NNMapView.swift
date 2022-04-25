@@ -73,9 +73,11 @@ struct NNMapView: View {
             }))
         }
         .onAppear(perform: {
-            
+            let timestamp = Timestamp()
+            timestamp.printTimestamp()
             ShapeObjectsBundle.shared.removeAllMapShapeObjects()
             ShapeObjectsBundle.shared.drawMapShapeObjects(mapView: mapView.mapInstance)
+            timestamp.printTimestamp()
         })
         .onDisappear(perform: {
           showToast = false
@@ -104,6 +106,8 @@ struct NNMapView: View {
             }
         }
     }
+    
+
 }
 
 struct NNMapView_Previews: PreviewProvider {

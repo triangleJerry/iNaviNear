@@ -17,6 +17,8 @@
 		0315076B27FEABE700C79C57 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0315076A27FEABE700C79C57 /* Extensions.swift */; };
 		0315076D27FEABF100C79C57 /* GPXParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0315076C27FEABF100C79C57 /* GPXParser.swift */; };
 		0315076F27FEABFA00C79C57 /* ShapeUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0315076E27FEABFA00C79C57 /* ShapeUtils.swift */; };
+		031A158328163703009241AF /* LamcParameter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 031A158228163703009241AF /* LamcParameter.swift */; };
+		031A158528163858009241AF /* ConvertXY.swift in Sources */ = {isa = PBXBuildFile; fileRef = 031A158428163858009241AF /* ConvertXY.swift */; };
 		032D730F280EBC23004D6250 /* INVMyItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 032D730E280EBC23004D6250 /* INVMyItem.swift */; };
 		033DD095280FC9C50067B01B /* ToastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 033DD094280FC9C50067B01B /* ToastView.swift */; };
 		03407D342807D739005F36FF /* ShapeObjectsBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03407D332807D739005F36FF /* ShapeObjectsBundle.swift */; };
@@ -48,6 +50,8 @@
 		0315076A27FEABE700C79C57 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		0315076C27FEABF100C79C57 /* GPXParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GPXParser.swift; sourceTree = "<group>"; };
 		0315076E27FEABFA00C79C57 /* ShapeUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShapeUtils.swift; sourceTree = "<group>"; };
+		031A158228163703009241AF /* LamcParameter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LamcParameter.swift; sourceTree = "<group>"; };
+		031A158428163858009241AF /* ConvertXY.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConvertXY.swift; sourceTree = "<group>"; };
 		032D730E280EBC23004D6250 /* INVMyItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = INVMyItem.swift; sourceTree = "<group>"; };
 		033DD094280FC9C50067B01B /* ToastView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastView.swift; sourceTree = "<group>"; };
 		03407D332807D739005F36FF /* ShapeObjectsBundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShapeObjectsBundle.swift; sourceTree = "<group>"; };
@@ -93,6 +97,7 @@
 				037212122805202800CD7CA2 /* SearchingArea.swift */,
 				038012BF27FEC31900DFB28D /* PreViewDev.swift */,
 				03721214280549B700CD7CA2 /* HapticManager.swift */,
+				031A158428163858009241AF /* ConvertXY.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -105,6 +110,7 @@
 				0315076627FEABC600C79C57 /* TrkData.swift */,
 				03407D332807D739005F36FF /* ShapeObjectsBundle.swift */,
 				032D730E280EBC23004D6250 /* INVMyItem.swift */,
+				031A158228163703009241AF /* LamcParameter.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -332,6 +338,7 @@
 				0315076F27FEABFA00C79C57 /* ShapeUtils.swift in Sources */,
 				03E5120628124DA9003310A6 /* LottieView.swift in Sources */,
 				034ABDD6280419280016CB41 /* CommonMapView.swift in Sources */,
+				031A158328163703009241AF /* LamcParameter.swift in Sources */,
 				0315076B27FEABE700C79C57 /* Extensions.swift in Sources */,
 				038012C027FEC31900DFB28D /* PreViewDev.swift in Sources */,
 				A157003D27FA93BD00DE498F /* iNaviNearApp.swift in Sources */,
@@ -340,6 +347,7 @@
 				03A885BC28094A7600A15F10 /* GPXDataProtocol.swift in Sources */,
 				0315076927FEABDF00C79C57 /* Constants.swift in Sources */,
 				037212132805202800CD7CA2 /* SearchingArea.swift in Sources */,
+				031A158528163858009241AF /* ConvertXY.swift in Sources */,
 				0315076D27FEABF100C79C57 /* GPXParser.swift in Sources */,
 				034ABDD828041BC20016CB41 /* SelfPositionButton.swift in Sources */,
 				03E5120428124CE2003310A6 /* NNIntroView.swift in Sources */,

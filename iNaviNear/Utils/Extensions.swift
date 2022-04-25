@@ -9,6 +9,18 @@ import Foundation
 import UIKit
 import SwiftUI
 
+class Timestamp {
+    lazy var dateFormatter: DateFormatter = {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy-MM-dd HH:mm:ss.SSS "
+        return formatter
+    }()
+
+    func printTimestamp() {
+        print(dateFormatter.string(from: Date()))
+    }
+}
+
 extension String {
 
   func CGFloatValue() -> CGFloat? {
@@ -43,13 +55,4 @@ extension View {
         
         self.modifier(Toast(message: message, config: .init(duration: duration), isShowing: isShowing))
     }
-    
-    @ViewBuilder
-    func `if`<Content: View>(_ conditional: Bool, content: (Self) -> Content) -> some View {
-         if conditional {
-             content(self)
-         } else {
-             self
-         }
-     }
 }
