@@ -21,6 +21,7 @@
 		031A158528163858009241AF /* ConvertXY.swift in Sources */ = {isa = PBXBuildFile; fileRef = 031A158428163858009241AF /* ConvertXY.swift */; };
 		032D730F280EBC23004D6250 /* INVMyItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 032D730E280EBC23004D6250 /* INVMyItem.swift */; };
 		033DD095280FC9C50067B01B /* ToastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 033DD094280FC9C50067B01B /* ToastView.swift */; };
+		033F09852817C5AF002877EA /* NNClusterDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 033F09842817C5AF002877EA /* NNClusterDelegate.swift */; };
 		03407D342807D739005F36FF /* ShapeObjectsBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03407D332807D739005F36FF /* ShapeObjectsBundle.swift */; };
 		03431C4F28169593002ACE5D /* SkipIntroButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03431C4E28169593002ACE5D /* SkipIntroButton.swift */; };
 		034ABDD2280418180016CB41 /* LakeLocation.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 034ABDD1280418180016CB41 /* LakeLocation.gpx */; };
@@ -55,6 +56,7 @@
 		031A158428163858009241AF /* ConvertXY.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConvertXY.swift; sourceTree = "<group>"; };
 		032D730E280EBC23004D6250 /* INVMyItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = INVMyItem.swift; sourceTree = "<group>"; };
 		033DD094280FC9C50067B01B /* ToastView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastView.swift; sourceTree = "<group>"; };
+		033F09842817C5AF002877EA /* NNClusterDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NNClusterDelegate.swift; sourceTree = "<group>"; };
 		03407D332807D739005F36FF /* ShapeObjectsBundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShapeObjectsBundle.swift; sourceTree = "<group>"; };
 		03431C4E28169593002ACE5D /* SkipIntroButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkipIntroButton.swift; sourceTree = "<group>"; };
 		034ABDD1280418180016CB41 /* LakeLocation.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = LakeLocation.gpx; sourceTree = "<group>"; };
@@ -113,6 +115,7 @@
 				03407D332807D739005F36FF /* ShapeObjectsBundle.swift */,
 				032D730E280EBC23004D6250 /* INVMyItem.swift */,
 				031A158228163703009241AF /* LamcParameter.swift */,
+				033F09842817C5AF002877EA /* NNClusterDelegate.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -333,6 +336,7 @@
 				03407D342807D739005F36FF /* ShapeObjectsBundle.swift in Sources */,
 				0315075B27FEAB5D00C79C57 /* NNTabView.swift in Sources */,
 				032D730F280EBC23004D6250 /* INVMyItem.swift in Sources */,
+				033F09852817C5AF002877EA /* NNClusterDelegate.swift in Sources */,
 				0315075F27FEAB8000C79C57 /* NNBookMarkView.swift in Sources */,
 				033DD095280FC9C50067B01B /* ToastView.swift in Sources */,
 				0315076727FEABC600C79C57 /* TrkData.swift in Sources */,

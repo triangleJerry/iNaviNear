@@ -18,9 +18,10 @@ struct NNMapView: View {
     @State private var showToast: Bool = false
     @State private var toastMessage: String = ""
     @State private var notiMarkerTitle: String = ""
+    @State var clusterManager: INVClusterManager? = nil
     
     var mapView: CommonMapView = CommonMapView()
-    @State var clusterManager: INVClusterManager? = nil
+    var clusterDelegate: NNClusterDelegate = NNClusterDelegate()
     
     // 아이나비 맵뷰에서 마커 -> 정보창을 클릭했을 때, 북마크 등록을 위해 이벤트를 감지해주는 notification.
     let markerInfoWindowEvent = NotificationCenter.default.publisher(for: NSNotification.Name.markerInfoWindowEvent)
@@ -32,7 +33,7 @@ struct NNMapView: View {
         ZStack(alignment: .bottomTrailing) {
             mapView
                 .edgesIgnoringSafeArea([.top]) // 상단 노치부분까지 지도가 덮을 수 있도록
-            
+
             SelfPositionButton(mapView: mapView.mapInstance)
                 .padding(EdgeInsets(top: 0, leading: 0, bottom: 190, trailing: 10))
         }
@@ -73,14 +74,21 @@ struct NNMapView: View {
             }))
         }
         .onAppear(perform: {
-            ShapeObjectsBundle.shared.removeAllMapShapeObjects()
-            ShapeObjectsBundle.shared.drawMapShapeObjectsOptimization(mapView: mapView.mapInstance)
             
-            clusterManager = INVClusterManager.init(mapView: mapView.mapInstance)
-            clusterManager?.add(ShapeObjectsBundle.shared.clusterArray)
+            if UserDefaults.standard.bool(forKey: "cluster") { // 클러스터링 방식을 사용해 셰이프
+                ShapeObjectsBundle.shared.drawMapShapeObjectsOptimization(mapView: mapView.mapInstance)
+                
+                clusterManager = INVClusterManager.init(mapView: mapView.mapInstance)
+                clusterManager?.delegate = clusterDelegate
+                clusterManager?.add(ShapeObjectsBundle.shared.clusterArray)
+            } else {
+                ShapeObjectsBundle.shared.drawMapShapeObjects(mapView: mapView.mapInstance)
+            }
         })
         .onDisappear(perform: {
-            clusterManager?.remove(ShapeObjectsBundle.shared.clusterArray)
+            
+            ShapeObjectsBundle.shared.removeAllMapShapeObjects()
+            clusterManager?.clearItems() // 초기화
             showToast = false
         })
         .toast(message: toastMessage, isShowing: $showToast, duration: Toast.short)

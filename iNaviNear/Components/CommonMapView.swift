@@ -26,10 +26,6 @@ struct CommonMapView: UIViewRepresentable {
         mapInstance.showZoomControl = true // 줌 컨트롤러를 표출
     }
     
-    class Coordinator: NSObject, INVClusterManagerDelegate {
-        
-    }
-    
     func makeCoordinator() -> Coordinator {
         return Coordinator()
     }

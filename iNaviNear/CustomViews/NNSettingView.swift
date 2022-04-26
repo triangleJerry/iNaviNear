@@ -12,6 +12,7 @@ struct NNSettingView: View {
     @State private var hapticToggle = UserDefaults.standard.bool(forKey: "haptic")
     @State private var markersToggle = UserDefaults.standard.bool(forKey: "markers")
     @State private var stepperAmount = UserDefaults.standard.integer(forKey: "area")
+    @State private var clusterToggle = UserDefaults.standard.bool(forKey: "cluster")
     
     @Binding var goIndex: Int
     
@@ -55,6 +56,18 @@ struct NNSettingView: View {
                 }).onChange(of: markersToggle) { value in
                     
                     UserDefaults.standard.set(self.markersToggle, forKey: "markers")
+                }
+                
+                // 클러스터링 방식 채택 유무
+                Toggle(isOn: $clusterToggle, label: {
+                    
+                    HStack {
+                        Image(systemName: "circle.hexagongrid.circle")
+                        Text("Clustering")
+                    }
+                }).onChange(of: clusterToggle) { value in
+                    
+                    UserDefaults.standard.set(self.clusterToggle, forKey: "cluster")
                 }
             }
         }

@@ -8,7 +8,7 @@
 import Foundation
 import iNaviMaps
 
-// 지도에 그려질 오브젝트(경로, 원, 마커)들의 인스턴스를 가지고 있는 싱글톤 패턴의 클래스입니다.
+// 지도에 그려질 오브젝트(경로, 원, 마커, 라인 ,클러스터링)들의 인스턴스를 가지고 있는 싱글톤 패턴의 클래스입니다.
 class ShapeObjectsBundle {
     
     static let shared = ShapeObjectsBundle()

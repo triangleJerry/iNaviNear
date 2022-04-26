@@ -32,7 +32,8 @@ struct iNaviNearApp: App {
                 "haptic": true,
                 "markers": true,
                 "area": 100,
-                "bookmark": [String]()
+                "bookmark": [String](),
+                "cluster": false
             ]
         )
     }
