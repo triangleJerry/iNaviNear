@@ -25,6 +25,14 @@ struct CommonMapView: UIViewRepresentable {
         mapInstance.showLocationButton = true // 현위치 버튼 표출
         mapInstance.showZoomControl = true // 줌 컨트롤러를 표출
     }
+    
+    class Coordinator: NSObject, INVClusterManagerDelegate {
+        
+    }
+    
+    func makeCoordinator() -> Coordinator {
+        return Coordinator()
+    }
 }
 
 struct CommonMapView_Previews: PreviewProvider {

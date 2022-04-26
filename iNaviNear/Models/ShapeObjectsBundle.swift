@@ -21,6 +21,7 @@ class ShapeObjectsBundle {
     var markerArray: [INVMarker] = []
     var distanceDictionary: [INVMarker : TrkData] = [:]
     var lineArray: [INVPolyline] = []
+    var clusterArray: [INVClusterItem] = []
 
     private init() {
         
@@ -34,7 +35,7 @@ class ShapeObjectsBundle {
     // 탐색범위를 그려줄 INVCircle 객체들을 일괄적으로 만들어 받아오는 메소드.
     private func getINVcircleArray() -> [INVCircle] {
         
-        var INVcircleArray: [INVCircle] = []
+        var _circleArray: [INVCircle] = []
         for (index, trk) in trkArray.enumerated() {
             
             if index % 100 == 0 {
@@ -45,11 +46,11 @@ class ShapeObjectsBundle {
                 circle.strokeWidth = 5 // 원의 테두리 두께를 5pt로 설정
                 circle.strokeColor = UIColor(red: 0.83, green: 0.15, blue: 0.19, alpha: 1.00)
                 
-                INVcircleArray.append(circle)
+                _circleArray.append(circle)
             }
         }
         
-        return INVcircleArray
+        return _circleArray
     }
     
     // 주행경로 <-> 마커 사이의 최단거리 확보를 위한 쌍을 일괄적으로 만들어 오는 메소드.
@@ -147,6 +148,26 @@ class ShapeObjectsBundle {
         }
     }
     
+    // 클러스터링을 적용하기 위한 INVClusterItem의 배열을 반환해 주는 메소드.
+    private func getINVClusterArray() -> [INVClusterItem] {
+        
+        var _clusterArray: [INVClusterItem] = []
+        
+        for (_, item) in markerArray.enumerated() {
+            if UserDefaults.standard.bool(forKey: "markers") { // 범위에 포함된 마커, 포함되지 않은 마커를 모두 셰이프.
+                let clusterItem = INVMyItem(position: item.position, title: item.title)
+                _clusterArray.append(clusterItem)
+            } else { // 범위에 포함된 마커만 맵에 셰이프를 해주어야 하는 케이스.
+                if item.iconImage == INV_MARKER_IMAGE_BLUE {
+                    let clusterItem = INVMyItem(position: item.position, title: item.title)
+                    _clusterArray.append(clusterItem)
+                }
+            }
+        }
+        
+        return _clusterArray
+    }
+    
     // 아이나비 지도 위에 셰이프 되어 있는 객체들을 지워주는 메소드. ( 경로 제외 )
     func removeAllMapShapeObjects() {
         
@@ -157,6 +178,7 @@ class ShapeObjectsBundle {
         lineArray = []
         distanceDictionary = [:]
         gridXYArray = []
+        clusterArray = []
     }
     
     // 아이나비 지도 위에 경로, 탐색범위, 마커를 일괄적으로 셰이프 해주는 메소드.
@@ -211,7 +233,9 @@ class ShapeObjectsBundle {
         gridXYArray = getgridXYArray()
         changeINVMarkerIconImageBaseGrid()
         
+        clusterArray = getINVClusterArray()
+        
         ShapeUtils.shapeINVRoutes(trkDataArray: trkArray, mapView: mapView)
-        ShapeUtils.shapeINVMarkers(mapView: mapView, markerArray: markerArray)
+        //ShapeUtils.shapeINVMarkers(mapView: mapView, markerArray: markerArray)
     }
 }

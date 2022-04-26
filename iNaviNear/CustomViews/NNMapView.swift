@@ -20,7 +20,7 @@ struct NNMapView: View {
     @State private var notiMarkerTitle: String = ""
     
     var mapView: CommonMapView = CommonMapView()
-    var clusterManager: INVClusterManager? = nil
+    @State var clusterManager: INVClusterManager? = nil
     
     // 아이나비 맵뷰에서 마커 -> 정보창을 클릭했을 때, 북마크 등록을 위해 이벤트를 감지해주는 notification.
     let markerInfoWindowEvent = NotificationCenter.default.publisher(for: NSNotification.Name.markerInfoWindowEvent)
@@ -66,28 +66,29 @@ struct NNMapView: View {
                     
                     bookmarkList.append(notiMarkerTitle)
                     UserDefaults.standard.set(bookmarkList, forKey: "bookmark")
-
+                    
                     toastMessage = "해당 카페가 즐겨찾기에 등록되었습니다."
                 }
                 showToast.toggle()
             }))
         }
         .onAppear(perform: {
-            let timestamp = Timestamp()
-            timestamp.printTimestamp()
             ShapeObjectsBundle.shared.removeAllMapShapeObjects()
-            ShapeObjectsBundle.shared.drawMapShapeObjects(mapView: mapView.mapInstance)
-            timestamp.printTimestamp()
+            ShapeObjectsBundle.shared.drawMapShapeObjectsOptimization(mapView: mapView.mapInstance)
+            
+            clusterManager = INVClusterManager.init(mapView: mapView.mapInstance)
+            clusterManager?.add(ShapeObjectsBundle.shared.clusterArray)
         })
         .onDisappear(perform: {
-          showToast = false
+            clusterManager?.remove(ShapeObjectsBundle.shared.clusterArray)
+            showToast = false
         })
         .toast(message: toastMessage, isShowing: $showToast, duration: Toast.short)
     }
     
     // 북마크뷰에서 리스트 셀을 클릭했을 때, 맵 뷰 이동 후 카메라를 해당 마커에 맞춰주는 메소드.
     private func focusingBookMarkMarker(markerTitle: String) {
-
+        
         for item in ShapeObjectsBundle.shared.markerArray.enumerated() {
             if item.element.title == markerTitle {
                 
@@ -107,7 +108,7 @@ struct NNMapView: View {
         }
     }
     
-
+    
 }
 
 struct NNMapView_Previews: PreviewProvider {
