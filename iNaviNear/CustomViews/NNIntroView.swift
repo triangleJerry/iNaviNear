@@ -25,7 +25,7 @@ struct NNIntroView: View {
                     Spacer()
                     SkipIntroButton(startIntro: $startIntro)
                         .padding(EdgeInsets(top: 0, leading: 0, bottom: 50, trailing: 50))
-                    .opacity(skipHidden ? 1 : 0)
+                        .opacity(skipHidden ? 1 : 0)
                 }
             }
             .navigationTitle("iNavi Near")
@@ -33,6 +33,9 @@ struct NNIntroView: View {
         }
         .onTapGesture {
             skipHidden.toggle()
+        }
+        .onAppear { // 네비게이션 타이틀 색상 변경
+            UINavigationBar.appearance().largeTitleTextAttributes = [.foregroundColor: UIColor(red: 0.08, green: 0.38, blue: 0.76, alpha: 1.00)]
         }
         
     }
