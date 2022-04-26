@@ -49,49 +49,40 @@ struct NNMapView: View {
             showingAlert.toggle()
         }
         .alert(isPresented: $showingAlert) {
-            
-            Alert(title: Text("카페를 북마크에 등록하시겠습니까?"),
-                  message: Text("북마크에 등록을 통해, 손쉽게 지도에서 해당 카페를 찾을 수 있습니다"),
-                  primaryButton: .cancel(Text("취소"), action: {
-                //some Action
-                
-            }),
-                  secondaryButton: .default(Text("등록"), action: {
-                // some Action
-                
-                let check = bookmarkList.contains(notiMarkerTitle)
-                if check { // 해당 마커(카페)가 이미 즐겨찾기에 등록이 되어 있는 상태
-                    
-                    toastMessage = "이미 등록된 카페입니다."
-                } else {
-                    
-                    bookmarkList.append(notiMarkerTitle)
-                    UserDefaults.standard.set(bookmarkList, forKey: "bookmark")
-                    
-                    toastMessage = "해당 카페가 즐겨찾기에 등록되었습니다."
-                }
-                showToast.toggle()
-            }))
+            return showingAlertFunc()
         }
         .onAppear(perform: {
-            
-            if UserDefaults.standard.bool(forKey: "cluster") { // 클러스터링 방식을 사용해 셰이프
-                ShapeObjectsBundle.shared.drawMapShapeObjectsOptimization(mapView: mapView.mapInstance)
-                
-                clusterManager = INVClusterManager.init(mapView: mapView.mapInstance)
-                clusterManager?.delegate = clusterDelegate
-                clusterManager?.add(ShapeObjectsBundle.shared.clusterArray)
-            } else {
-                ShapeObjectsBundle.shared.drawMapShapeObjects(mapView: mapView.mapInstance)
-            }
+            onAppearFunc()
         })
         .onDisappear(perform: {
-            
-            ShapeObjectsBundle.shared.removeAllMapShapeObjects()
-            clusterManager?.clearItems() // 초기화
-            showToast = false
+            onDisappearFunc()
         })
         .toast(message: toastMessage, isShowing: $showToast, duration: Toast.short)
+    }
+    
+    private func showingAlertFunc() -> Alert {
+        Alert(title: Text("카페를 북마크에 등록하시겠습니까?"),
+              message: Text("북마크에 등록을 통해, 손쉽게 지도에서 해당 카페를 찾을 수 있습니다"),
+              primaryButton: .cancel(Text("취소"), action: {
+            //some Action
+            
+        }),
+              secondaryButton: .default(Text("등록"), action: {
+            // some Action
+            
+            let check = bookmarkList.contains(notiMarkerTitle)
+            if check { // 해당 마커(카페)가 이미 즐겨찾기에 등록이 되어 있는 상태
+                
+                toastMessage = "이미 등록된 카페입니다."
+            } else {
+                
+                bookmarkList.append(notiMarkerTitle)
+                UserDefaults.standard.set(bookmarkList, forKey: "bookmark")
+                
+                toastMessage = "해당 카페가 즐겨찾기에 등록되었습니다."
+            }
+            showToast.toggle()
+        }))
     }
     
     // 북마크뷰에서 리스트 셀을 클릭했을 때, 맵 뷰 이동 후 카메라를 해당 마커에 맞춰주는 메소드.
@@ -116,7 +107,27 @@ struct NNMapView: View {
         }
     }
     
+    // MARK: Life Cycle func.
     
+    private func onAppearFunc() {
+        
+        if UserDefaults.standard.bool(forKey: "cluster") { // 클러스터링 방식을 사용해 셰이프
+            ShapeObjectsBundle.shared.drawMapShapeObjectsOptimization(mapView: mapView.mapInstance)
+            
+            clusterManager = INVClusterManager.init(mapView: mapView.mapInstance)
+            clusterManager?.delegate = clusterDelegate
+            clusterManager?.add(ShapeObjectsBundle.shared.clusterArray)
+        } else {
+            ShapeObjectsBundle.shared.drawMapShapeObjects(mapView: mapView.mapInstance)
+        }
+    }
+    
+    private func onDisappearFunc() {
+        
+        ShapeObjectsBundle.shared.removeAllMapShapeObjects()
+        clusterManager?.clearItems() // 초기화
+        showToast = false
+    }
 }
 
 struct NNMapView_Previews: PreviewProvider {

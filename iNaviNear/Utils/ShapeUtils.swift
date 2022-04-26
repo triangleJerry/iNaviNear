@@ -87,6 +87,7 @@ class ShapeUtils {
     
     // 아이나비 지도 위의 원형 탐색 범위들을 일괄적으로 지워주는 메소드.
     static func removeCircleRanges(circleArray: [INVCircle]) {
+        
         for circle in circleArray.enumerated() {
             
             circle.element.mapView = nil
@@ -95,6 +96,7 @@ class ShapeUtils {
     
     // 아이나비 지도 위의 마커(카페)들을 일괄적으로 지워주는 메소드.
     static func removeINVMarkers(markerArray: [INVMarker]) {
+        
         for marker in markerArray.enumerated() {
             
             marker.element.infoWindow?.mapView = nil
@@ -104,21 +106,10 @@ class ShapeUtils {
     
     // 아이나비 지도 위의 최단거리 선들을 일괄적으로 지워주는 메소드.
     static func removeINVPolylines(lineArray: [INVPolyline]) {
+        
         for line in lineArray.enumerated() {
             
             line.element.mapView = nil
         }
-    }
-}
-
-// 텍스트를 표출하는 INVImageTextDataSource 클래스
-class TextInfoWindowDataSource: NSObject, INVImageTextDataSource {
-    func title(with shape: INVShape) -> String {
-        if let infoWindow = shape as? INVInfoWindow {
-            
-            return "좌표 : (\(infoWindow.position.lat), \(infoWindow.position.lng))"
-        }
-        
-        return ""
     }
 }

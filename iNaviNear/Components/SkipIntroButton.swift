@@ -30,7 +30,6 @@ struct SkipIntroButton: View {
             
             let impactHeavy = UIImpactFeedbackGenerator(style: .heavy)
             impactHeavy.impactOccurred()
-            
         }
     }
 }

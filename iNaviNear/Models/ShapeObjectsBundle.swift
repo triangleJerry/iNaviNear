@@ -195,7 +195,7 @@ class ShapeObjectsBundle {
         ShapeUtils.shapeINVMarkers(mapView: mapView, markerArray: markerArray)
     }
     
-    // MARK: 2번째 방법.
+    // MARK: 2번째 방법. ( gridXY를 이용한 방법 + 클러스터링 )
     
     // trkData의 GridXY를 받아오는 메소드
     private func getgridXYArray() -> [String] {
@@ -236,6 +236,5 @@ class ShapeObjectsBundle {
         clusterArray = getINVClusterArray()
         
         ShapeUtils.shapeINVRoutes(trkDataArray: trkArray, mapView: mapView)
-        //ShapeUtils.shapeINVMarkers(mapView: mapView, markerArray: markerArray)
     }
 }

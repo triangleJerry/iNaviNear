@@ -20,7 +20,7 @@ struct NNSettingView: View {
         List {
             Section(header: Text("Options")) {
                 
-                // 햅틱 진동
+                // 1. 햅틱 진동
                 Toggle(isOn: $hapticToggle, label: {
                     
                     HStack {
@@ -32,7 +32,7 @@ struct NNSettingView: View {
                     UserDefaults.standard.set(self.hapticToggle, forKey: "haptic")
                 }
                 
-                // 카페 탐색 범위
+                // 2. 카페 탐색 범위
                 Stepper(value: $stepperAmount,in: 1...300, label: {
                     
                     HStack {
@@ -46,7 +46,7 @@ struct NNSettingView: View {
                     UserDefaults.standard.set(self.stepperAmount, forKey: "area")
                 }
                 
-                // 탐색 범위를 벗어난 마커의 지도 표기 유무
+                // 3. 탐색 범위를 벗어난 마커의 지도 표기 유무
                 Toggle(isOn: $markersToggle, label: {
                     
                     HStack {
@@ -58,7 +58,7 @@ struct NNSettingView: View {
                     UserDefaults.standard.set(self.markersToggle, forKey: "markers")
                 }
                 
-                // 클러스터링 방식 채택 유무
+                // 4. 클러스터링 방식 채택 유무
                 Toggle(isOn: $clusterToggle, label: {
                     
                     HStack {

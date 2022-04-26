@@ -18,19 +18,23 @@ struct NNBookMarkView: View {
     var body: some View {
         NavigationView { // onMove를 사용하기 위해서는 List를 NavigationView가 감싸줘야 한다.
             if bookmarkCount == 0 {
+                
                 Text("즐겨찾기를 등록해 주세요.")
                     .foregroundColor(.gray)
                     .font(.system(size: 20))
                     .fontWeight(.medium)
             } else {
                 List {
+                    
                     ForEach(bookmarkList, id: \.self) { bookmark in
+                        
                         Text(bookmark)
                             .onTapGesture() {
                                 HapticManager.instance.impact(style: .medium)
                                 withAnimation {
                                     self.goIndex = 0
                                 }
+                                
                                 DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.5) {
                                     NotificationCenter.default.post(name: Notification.Name.bookMarkClickEvent, object: bookmark)
                                 }

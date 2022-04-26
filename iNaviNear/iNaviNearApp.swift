@@ -24,6 +24,7 @@ struct iNaviNearApp: App {
     }
     
     init() {
+        
         // INVMap 앱키 설정
         INVMapSdk.sharedInstance().appKey = KEY.AppKey
         let userDefaults = UserDefaults.standard
