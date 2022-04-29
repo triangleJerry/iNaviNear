@@ -18,6 +18,9 @@ class NNClusterDelegate: NSObject, INVClusterManagerDelegate {
     
     // '아이템'이 그려지는 시점에 호출되는 델리게이트 함수
     func clusterManager(_ clusterManager: INVClusterManager, willRenderClusterItem clusterItem: INVClusterItem, with markerOptions: INVMarkerOptions) {
+        if let item = clusterItem as? INVMyItem {
+            markerOptions.title = item.title
+        }
         
         markerOptions.position = clusterItem.position
         for (_, item) in ShapeObjectsBundle.shared.markerArray.enumerated() {
