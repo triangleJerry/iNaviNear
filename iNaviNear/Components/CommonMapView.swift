@@ -12,8 +12,7 @@ struct CommonMapView: UIViewRepresentable {
     
     var mapInstance: InaviMapView = InaviMapView() // 맵 뷰의 맵 인스턴스.
     
-    func updateUIView(_ uiView: InaviMapView, context: Context) {
-    }
+    func updateUIView(_ uiView: InaviMapView, context: Context) { }
     
     func makeUIView(context: Context) -> InaviMapView {
         

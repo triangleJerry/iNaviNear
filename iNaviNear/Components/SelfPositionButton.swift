@@ -20,7 +20,7 @@ struct SelfPositionButton: View {
             Image(systemName: "scope")
                 .resizable()
                 .scaledToFill()
-                .frame(width: 40.0, height: 40.0)
+                .frame(width: 35.0, height: 35.0)
                 .clipped() // 프레임을 벗어나는 이미지 제거
                 .padding(8)
         }

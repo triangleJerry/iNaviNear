@@ -8,18 +8,20 @@
 import Foundation
 import iNaviMaps
 
-// 지도에 그려질 오브젝트(경로, 원, 마커)들의 인스턴스를 가지고 있는 싱글톤 패턴의 클래스입니다.
+// 지도에 그려질 오브젝트(경로, 원, 마커, 라인 ,클러스터링)들의 인스턴스를 가지고 있는 싱글톤 패턴의 클래스입니다.
 class ShapeObjectsBundle {
     
     static let shared = ShapeObjectsBundle()
     
     let gpxParser = GPXParser()
     var trkArray: [TrkData] = []
+    var gridXYArray: [String] = []
     var CafeDataArray: [CafeData] = []
     var circleArray: [INVCircle] = []
     var markerArray: [INVMarker] = []
-    var distanceDictionary: [INVMarker:TrkData] = [:]
+    var distanceDictionary: [INVMarker : TrkData] = [:]
     var lineArray: [INVPolyline] = []
+    var clusterArray: [INVClusterItem] = []
 
     private init() {
         
@@ -33,7 +35,7 @@ class ShapeObjectsBundle {
     // 탐색범위를 그려줄 INVCircle 객체들을 일괄적으로 만들어 받아오는 메소드.
     private func getINVcircleArray() -> [INVCircle] {
         
-        var INVcircleArray: [INVCircle] = []
+        var _circleArray: [INVCircle] = []
         for (index, trk) in trkArray.enumerated() {
             
             if index % 100 == 0 {
@@ -44,11 +46,11 @@ class ShapeObjectsBundle {
                 circle.strokeWidth = 5 // 원의 테두리 두께를 5pt로 설정
                 circle.strokeColor = UIColor(red: 0.83, green: 0.15, blue: 0.19, alpha: 1.00)
                 
-                INVcircleArray.append(circle)
+                _circleArray.append(circle)
             }
         }
         
-        return INVcircleArray
+        return _circleArray
     }
     
     // 주행경로 <-> 마커 사이의 최단거리 확보를 위한 쌍을 일괄적으로 만들어 오는 메소드.
@@ -89,7 +91,7 @@ class ShapeObjectsBundle {
     
     // 아이나비 지도 위에 마커(카페)들을 그려주기 위해 INVMarker가 담긴 배열을 반환해 주는 메소드.
     private func getINVMarkerArray(mapView: InaviMapView) -> [INVMarker] {
-        var INVMarkerArray: [INVMarker] = []
+        var _INVMarkerArray: [INVMarker] = []
         
         for item in CafeDataArray.enumerated() {
             
@@ -131,9 +133,9 @@ class ShapeObjectsBundle {
                 return false
             }
             
-            INVMarkerArray.append(marker)
+            _INVMarkerArray.append(marker)
         }
-        return INVMarkerArray
+        return _INVMarkerArray
     }
     
     // 범위 내에 포함되는 마커들의 아이콘 색상을 변경시켜주는 메소드
@@ -146,6 +148,26 @@ class ShapeObjectsBundle {
         }
     }
     
+    // 클러스터링을 적용하기 위한 INVClusterItem의 배열을 반환해 주는 메소드.
+    private func getINVClusterArray() -> [INVClusterItem] {
+        
+        var _clusterArray: [INVClusterItem] = []
+        
+        for (_, item) in markerArray.enumerated() {
+            if UserDefaults.standard.bool(forKey: "markers") { // 범위에 포함된 마커, 포함되지 않은 마커를 모두 셰이프.
+                let clusterItem = INVMyItem(position: item.position, title: item.title)
+                _clusterArray.append(clusterItem)
+            } else { // 범위에 포함된 마커만 맵에 셰이프를 해주어야 하는 케이스.
+                if item.iconImage == INV_MARKER_IMAGE_BLUE {
+                    let clusterItem = INVMyItem(position: item.position, title: item.title)
+                    _clusterArray.append(clusterItem)
+                }
+            }
+        }
+        
+        return _clusterArray
+    }
+    
     // 아이나비 지도 위에 셰이프 되어 있는 객체들을 지워주는 메소드. ( 경로 제외 )
     func removeAllMapShapeObjects() {
         
@@ -155,6 +177,8 @@ class ShapeObjectsBundle {
         markerArray = []
         lineArray = []
         distanceDictionary = [:]
+        gridXYArray = []
+        clusterArray = []
     }
     
     // 아이나비 지도 위에 경로, 탐색범위, 마커를 일괄적으로 셰이프 해주는 메소드.
@@ -169,5 +193,48 @@ class ShapeObjectsBundle {
         ShapeUtils.shapeINVRoutes(trkDataArray: trkArray, mapView: mapView)
         ShapeUtils.shapeLines(mapView: mapView, linesArray: lineArray)
         ShapeUtils.shapeINVMarkers(mapView: mapView, markerArray: markerArray)
+    }
+    
+    // MARK: 2번째 방법. ( gridXY를 이용한 방법 + 클러스터링 )
+    
+    // trkData의 GridXY를 받아오는 메소드
+    private func getgridXYArray() -> [String] {
+        var _gridXYArray: [String] = []
+        
+        for (_, item) in trkArray.enumerated() {
+            let result = ConvertXY.convertMap(lon: item.location.lng, lat: item.location.lat)
+            let str = "\(result.mapX),\(result.mapY)"
+            if !_gridXYArray.contains(str) { // 해당 X,Y좌표가 배열에 없을 시, 추가
+                _gridXYArray.append(str)
+            }
+        }
+        //print(_gridXYArray, "count:\(_gridXYArray.count), \(UserDefaults.standard.integer(forKey: "area"))m")
+        return _gridXYArray
+    }
+    
+    // 범위 내에 포함되는 마커들의 아이콘 색상을 변경시켜주는 메소드
+    private func changeINVMarkerIconImageBaseGrid() {
+        
+        for (_, item) in markerArray.enumerated() {
+            let markerGrid = ConvertXY.convertMap(lon: item.position.lng, lat: item.position.lat)
+            let str = "\(markerGrid.mapX),\(markerGrid.mapY)"
+            if gridXYArray.contains(str) { // 마커와 동일한 그리드에 trkData가 존재하는 경우
+                item.iconImage = INV_MARKER_IMAGE_BLUE
+                continue
+            }
+            
+            item.iconImage = SearchingArea.searchInTrkArea(trkDataArray: trkArray, marker: item)
+        }
+    }
+    
+    func drawMapShapeObjectsOptimization(mapView: InaviMapView) {
+        
+        markerArray = getINVMarkerArray(mapView: mapView)
+        gridXYArray = getgridXYArray()
+        changeINVMarkerIconImageBaseGrid()
+        
+        clusterArray = getINVClusterArray()
+        
+        ShapeUtils.shapeINVRoutes(trkDataArray: trkArray, mapView: mapView)
     }
 }

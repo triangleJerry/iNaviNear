@@ -29,6 +29,24 @@ class SearchingArea {
         return INV_MARKER_IMAGE_GRAY
     }
     
+    static func searchInTrkArea(trkDataArray: [TrkData], marker: INVMarker) -> INVImage {
+        
+        for trk in trkDataArray.enumerated() {
+            
+            let trkPoint = CLLocation(latitude: trk.element.location.lat, longitude: trk.element.location.lng)
+            let markerLocation = CLLocation(latitude: marker.position.lat, longitude: marker.position.lng)
+            
+            let distanceInMeters = trkPoint.distance(from: markerLocation) // result is in meters
+            
+            // 범위에 포함되어 있는 마커라면 파란색으로, 벗어난 마커라면 회색으로.
+            if UserDefaults.standard.integer(forKey: "area") >= Int(distanceInMeters) {
+                //print(String(format: "The distance to my buddy is \(distanceInMeters)m \(marker.title)"))
+                return INV_MARKER_IMAGE_BLUE
+            }
+        }
+        return INV_MARKER_IMAGE_GRAY
+    }
+    
     static func searchShortestDistance(trkArray: [TrkData], marker: INVMarker) -> TrkData? {
         
         var length = UserDefaults.standard.integer(forKey: "area")

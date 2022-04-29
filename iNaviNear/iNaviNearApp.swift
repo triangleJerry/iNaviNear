@@ -24,6 +24,7 @@ struct iNaviNearApp: App {
     }
     
     init() {
+        
         // INVMap 앱키 설정
         INVMapSdk.sharedInstance().appKey = KEY.AppKey
         let userDefaults = UserDefaults.standard
@@ -32,7 +33,8 @@ struct iNaviNearApp: App {
                 "haptic": true,
                 "markers": true,
                 "area": 100,
-                "bookmark": [String]()
+                "bookmark": [String](),
+                "cluster": false
             ]
         )
     }
