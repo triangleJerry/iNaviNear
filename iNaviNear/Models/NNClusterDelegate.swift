@@ -41,6 +41,10 @@ class NNClusterDelegate: NSObject, INVClusterManagerDelegate {
     // '아이템'이 클릭된 시점에 호출되는 델리게이트 함수
     func clusterManager(_ clusterManager: INVClusterManager, didTap clusterItem: INVClusterItem, with markerOptions: INVMarkerOptions) -> Bool {
         print("아이템 클릭")
+        HapticManager.instance.impact(style: .medium)
+        if let item = clusterItem as? INVMyItem {
+            NotificationCenter.default.post(name: Notification.Name.markerInfoWindowEvent, object: item.title)
+        }
         return true // 이벤트 소비 여부. false이면 지도로 이벤트가 전달됨
     }
 }

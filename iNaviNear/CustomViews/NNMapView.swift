@@ -23,7 +23,7 @@ struct NNMapView: View {
     var mapView: CommonMapView = CommonMapView()
     var clusterDelegate: NNClusterDelegate = NNClusterDelegate()
     
-    // 아이나비 맵뷰에서 마커 -> 정보창을 클릭했을 때, 북마크 등록을 위해 이벤트를 감지해주는 notification.
+    // 아이나비 맵뷰에서 마커,클러스터 -> 정보창을 클릭했을 때, 북마크 등록을 위해 이벤트를 감지해주는 notification.
     let markerInfoWindowEvent = NotificationCenter.default.publisher(for: NSNotification.Name.markerInfoWindowEvent)
     // 북마크뷰에서 리스트 셀을 클릭했을 때, 맵 뷰 이동 후 카메라를 해당 마커에 맞춰주기 위해 이벤트를 감지해주는 notification.
     let bookMarkClickEvent = NotificationCenter.default.publisher(for: NSNotification.Name.bookMarkClickEvent)
@@ -43,10 +43,19 @@ struct NNMapView: View {
         }
         .onReceive(markerInfoWindowEvent) { postData in
             
-            let marker = postData.object as! INVMarker
-            notiMarkerTitle = marker.title
+            if let marker = postData.object as? INVMarker {
+                notiMarkerTitle = marker.title
+                
+                showingAlert.toggle()
+                return
+            }
             
-            showingAlert.toggle()
+            if let clusterTitle = postData.object as? String {
+                notiMarkerTitle = clusterTitle
+                
+                showingAlert.toggle()
+                return
+            }
         }
         .alert(isPresented: $showingAlert) {
             return showingAlertFunc()
